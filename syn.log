@@ -1,0 +1,1747 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version T-2022.03-SP2 for linux64 - May 25, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+set DESIGN $::env(DESIGN)
+FPU
+set RTL_FILES $::env(RTL_FILES)
+/tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/fpu.sv /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/studentlib.sv /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/fpu_lib.sv /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v
+set LIB_FILE $::env(LIB_FILE)
+/grading/ece340/cmulib18.db
+if {$DESIGN eq ""} {
+    puts "ERROR: DESIGN is not defined"
+    exit -822
+}
+if {$RTL_FILES eq ""} {
+    puts "ERROR: RTL_FILES is not defined"
+    exit -822
+}
+if {$LIB_FILE eq ""} {
+    puts "ERROR: LIB_FILE is not defined"
+    exit -822
+}
+if {[file exists /proc/cpuinfo]} {
+  sh grep "model name" /proc/cpuinfo
+  sh grep "cpu MHz"    /proc/cpuinfo
+}
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+cpu MHz		: 2394.375
+puts "Hostname : [info hostname]"
+Hostname : e2ed7c26eeb8
+##############################################################################
+## Preset global variables and attributes
+##############################################################################
+set _REPORTS_PATH reports
+reports
+set_app_var search_path {rtl}
+rtl
+###############################################################
+## Library setup
+###############################################################
+define_design_lib work -path ./work
+1
+set_app_var target_library $LIB_FILE
+/grading/ece340/cmulib18.db
+set_app_var link_library $LIB_FILE
+/grading/ece340/cmulib18.db
+####################################################################
+## Load Design
+####################################################################
+analyze -format sverilog $RTL_FILES
+Running PRESTO HDLC
+Compiling source file /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/fpu.sv
+Compiling source file /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/studentlib.sv
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/studentlib.sv:557: the undeclared symbol 'nSA' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/studentlib.sv:558: the undeclared symbol 'nSB' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/studentlib.sv:742: the undeclared symbol 'eq' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/fpu_lib.sv
+Compiling source file /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:17: The construct 'specify' is not supported in synthesis; it is ignored. (VER-708)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:15: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:38: The construct 'specify' is not supported in synthesis; it is ignored. (VER-708)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:34: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:75: The construct 'specify' is not supported in synthesis; it is ignored. (VER-708)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:72: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:99: The construct 'specify' is not supported in synthesis; it is ignored. (VER-708)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:122: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:130: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:138: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:146: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:153: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:160: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:167: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:174: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:181: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:188: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:195: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:202: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:209: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:216: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:223: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:230: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:248: The delay specification for tri-state gate instantiation is ignored. (VER-971)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:259: The delay specification for tri-state gate instantiation is ignored. (VER-971)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:274: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:287: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:300: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:313: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:326: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:339: The delay specification for gate instantiation is ignored. (VER-970)
+Warning:  /tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/gatelib.v:352: The delay specification for gate instantiation is ignored. (VER-970)
+Presto compilation completed successfully.
+Loading db file '/grading/ece340/cmulib18.db'
+1
+elaborate $DESIGN
+Loading db file '/ux0/synopsys/syn/T-2022.03-SP2/libraries/syn/gtech.db'
+Loading db file '/ux0/synopsys/syn/T-2022.03-SP2/libraries/syn/standard.sldb'
+  Loading link library 'CMUlib18'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine FPU line 18 in file
+		'/tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/fpu.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        A_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        B_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       SEL_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      Y_reg_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (FPU)
+Elaborated 1 design.
+Current design is now 'FPU'.
+Information: Building the design 'float_unpacker'. (HDL-193)
+Presto compilation completed successfully. (float_unpacker)
+Information: Building the design 'alignment'. (HDL-193)
+Presto compilation completed successfully. (alignment)
+Information: Building the design 'addSub'. (HDL-193)
+Presto compilation completed successfully. (addSub)
+Information: Building the design 'nomalizeSum'. (HDL-193)
+Presto compilation completed successfully. (nomalizeSum)
+Information: Building the design 'realRounding'. (HDL-193)
+Presto compilation completed successfully. (realRounding)
+Information: Building the design 'addAdjust'. (HDL-193)
+Presto compilation completed successfully. (addAdjust)
+Information: Building the design 'multiplier'. (HDL-193)
+Presto compilation completed successfully. (multiplier)
+Information: Building the design 'normalizeMult'. (HDL-193)
+Presto compilation completed successfully. (normalizeMult)
+Information: Building the design 'multAdjust'. (HDL-193)
+Presto compilation completed successfully. (multAdjust)
+Information: Building the design 'mux32'. (HDL-193)
+Presto compilation completed successfully. (mux32)
+Information: Building the design 'XNOR2'. (HDL-193)
+Presto compilation completed successfully. (XNOR2)
+Information: Building the design 'equalZero8'. (HDL-193)
+Presto compilation completed successfully. (equalZero8)
+Information: Building the design 'mux24'. (HDL-193)
+Presto compilation completed successfully. (mux24)
+Information: Building the design 'equalZero23'. (HDL-193)
+Presto compilation completed successfully. (equalZero23)
+Information: Building the design 'equalFF8'. (HDL-193)
+Presto compilation completed successfully. (equalFF8)
+Information: Building the design 'INV'. (HDL-193)
+Presto compilation completed successfully. (INV)
+Information: Building the design 'AND2'. (HDL-193)
+Presto compilation completed successfully. (AND2)
+Information: Building the design 'OR2'. (HDL-193)
+Presto compilation completed successfully. (OR2)
+Information: Building the design 'compare8'. (HDL-193)
+Presto compilation completed successfully. (compare8)
+Information: Building the design 'compare24'. (HDL-193)
+Presto compilation completed successfully. (compare24)
+Information: Building the design 'shift27'. (HDL-193)
+Presto compilation completed successfully. (shift27)
+Information: Building the design 'mux8'. (HDL-193)
+Presto compilation completed successfully. (mux8)
+Information: Building the design 'sub8'. (HDL-193)
+Presto compilation completed successfully. (sub8)
+Information: Building the design 'getSticky_27'. (HDL-193)
+
+Statistics for case statements in always block at line 20 in file
+	'/tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/fpu_lib.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            21            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (getSticky_27)
+Information: Building the design 'MUX2'. (HDL-193)
+Presto compilation completed successfully. (MUX2)
+Information: Building the design 'mux27'. (HDL-193)
+Presto compilation completed successfully. (mux27)
+Information: Building the design 'sub27'. (HDL-193)
+Presto compilation completed successfully. (sub27)
+Information: Building the design 'add27'. (HDL-193)
+Presto compilation completed successfully. (add27)
+Information: Building the design 'equal27'. (HDL-193)
+Presto compilation completed successfully. (equal27)
+Information: Building the design 'LeadingZeros_27'. (HDL-193)
+
+Statistics for case statements in always block at line 115 in file
+	'/tmp/ece340_verilog_syn_FPUwxz4xyfn/rtl/fpu_lib.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           116            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (LeadingZeros_27)
+Information: Building the design 'shift27Left'. (HDL-193)
+Presto compilation completed successfully. (shift27Left)
+Information: Building the design 'addOne8'. (HDL-193)
+Presto compilation completed successfully. (addOne8)
+Information: Building the design 'equalZero5'. (HDL-193)
+Presto compilation completed successfully. (equalZero5)
+Information: Building the design 'addOne24'. (HDL-193)
+Presto compilation completed successfully. (addOne24)
+Information: Building the design 'AND3'. (HDL-193)
+Presto compilation completed successfully. (AND3)
+Information: Building the design 'OR3'. (HDL-193)
+Presto compilation completed successfully. (OR3)
+Information: Building the design 'add8'. (HDL-193)
+Presto compilation completed successfully. (add8)
+Information: Building the design 'sub9'. (HDL-193)
+Presto compilation completed successfully. (sub9)
+Information: Building the design 'compare9'. (HDL-193)
+Presto compilation completed successfully. (compare9)
+Information: Building the design 'mult_24'. (HDL-193)
+Presto compilation completed successfully. (mult_24)
+Information: Building the design 'equalBit0'. (HDL-193)
+Presto compilation completed successfully. (equalBit0)
+Information: Building the design 'equalBit1'. (HDL-193)
+Presto compilation completed successfully. (equalBit1)
+Information: Building the design 'compare'. (HDL-193)
+Presto compilation completed successfully. (compare)
+Information: Building the design 'halfSub'. (HDL-193)
+Presto compilation completed successfully. (halfSub)
+Information: Building the design 'subBit'. (HDL-193)
+Presto compilation completed successfully. (subBit)
+Information: Building the design 'halfAdder'. (HDL-193)
+Presto compilation completed successfully. (halfAdder)
+Information: Building the design 'fullAdder'. (HDL-193)
+Presto compilation completed successfully. (fullAdder)
+Information: Building the design 'equalBit'. (HDL-193)
+Presto compilation completed successfully. (equalBit)
+Information: Building the design 'XOR2'. (HDL-193)
+Presto compilation completed successfully. (XOR2)
+1
+####################################################################
+## Constraints Setup
+####################################################################
+set_fix_multiple_port_nets -all -buffer_constants
+1
+create_clock -period 100.0 -waveform {0 0.5} clk
+1
+if {![file exists ${_REPORTS_PATH}]} {
+  file mkdir ${_REPORTS_PATH}
+  puts "Creating directory ${_REPORTS_PATH}"
+}
+Creating directory reports
+#####################################################################################################
+### Synthesizing
+#####################################################################################################
+uniquify
+Information: Uniquified 2 instances of design 'realRounding'. (OPT-1056)
+Information: Uniquified 7 instances of design 'mux32'. (OPT-1056)
+Information: Uniquified 78 instances of design 'XNOR2'. (OPT-1056)
+Information: Uniquified 3 instances of design 'equalZero8'. (OPT-1056)
+Information: Uniquified 6 instances of design 'mux24'. (OPT-1056)
+Information: Uniquified 2 instances of design 'equalZero23'. (OPT-1056)
+Information: Uniquified 6 instances of design 'equalFF8'. (OPT-1056)
+Information: Uniquified 394 instances of design 'INV'. (OPT-1056)
+Information: Uniquified 512 instances of design 'AND2'. (OPT-1056)
+Information: Uniquified 296 instances of design 'OR2'. (OPT-1056)
+Information: Uniquified 9 instances of design 'mux8'. (OPT-1056)
+Information: Uniquified 2 instances of design 'sub8'. (OPT-1056)
+Information: Uniquified 2 instances of design 'getSticky_27'. (OPT-1056)
+Information: Uniquified 906 instances of design 'MUX2'. (OPT-1056)
+Information: Uniquified 17 instances of design 'mux27'. (OPT-1056)
+Information: Uniquified 4 instances of design 'addOne8'. (OPT-1056)
+Information: Uniquified 2 instances of design 'addOne24'. (OPT-1056)
+Information: Uniquified 152 instances of design 'AND3'. (OPT-1056)
+Information: Uniquified 3 instances of design 'OR3'. (OPT-1056)
+Information: Uniquified 2 instances of design 'compare9'. (OPT-1056)
+Information: Uniquified 75 instances of design 'equalBit0'. (OPT-1056)
+Information: Uniquified 48 instances of design 'equalBit1'. (OPT-1056)
+Information: Uniquified 50 instances of design 'compare'. (OPT-1056)
+Information: Uniquified 4 instances of design 'halfSub'. (OPT-1056)
+Information: Uniquified 48 instances of design 'subBit'. (OPT-1056)
+Information: Uniquified 148 instances of design 'halfAdder'. (OPT-1056)
+Information: Uniquified 33 instances of design 'fullAdder'. (OPT-1056)
+Information: Uniquified 77 instances of design 'equalBit'. (OPT-1056)
+Information: Uniquified 200 instances of design 'XOR2'. (OPT-1056)
+1
+check_design -summary
+ 
+****************************************
+check_design summary:
+Version:     T-2022.03-SP2
+Date:        Wed Nov 23 05:17:49 2022
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     33
+    Unconnected ports (LINT-28)                                    15
+    Feedthrough (LINT-29)                                          18
+
+Cells                                                             726
+    Connected to power or ground (LINT-32)                        409
+    Nets connected to multiple pins on same cell (LINT-33)        317
+
+Nets                                                                6
+    Unloaded nets (LINT-2)                                          6
+--------------------------------------------------------------------------------
+
+Information: Use the 'check_design' command for 
+	 more information about warnings. (LINT-98)
+
+1
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | T-2022.03-DWBB_202203.2 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 6562                                   |
+| Number of User Hierarchies                              | 3108                                   |
+| Sequential Cell Count                                   | 97                                     |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 1981                                   |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+
+Information: There are 765 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'MUX2_867'
+  Processing 'mux32_6'
+  Processing 'OR2_277'
+  Processing 'OR3_1'
+  Processing 'AND2_496'
+  Processing 'INV_375'
+  Processing 'AND3_148'
+  Processing 'equalBit0_0'
+  Processing 'equalZero8_0'
+  Processing 'multAdjust'
+  Processing 'mux8_0'
+  Processing 'mux24_0'
+  Processing 'equalBit1_0'
+  Processing 'equalFF8_0'
+  Processing 'XOR2_66'
+  Processing 'halfAdder_66'
+  Processing 'addOne8_0'
+  Processing 'addOne24_0'
+  Processing 'realRounding_0'
+  Processing 'mux27_11'
+  Processing 'normalizeMult'
+  Processing 'getSticky_27_0'
+  Processing 'mult_24'
+  Processing 'XNOR2_0'
+  Processing 'equalBit_0'
+  Processing 'compare_0'
+  Processing 'compare9_0'
+  Processing 'subBit_0'
+  Processing 'halfSub_0'
+  Processing 'sub9'
+  Processing 'fullAdder_0'
+  Processing 'add8'
+  Processing 'multiplier'
+  Processing 'addAdjust'
+  Processing 'realRounding_1'
+  Processing 'equalZero5'
+  Processing 'sub8_0'
+  Processing 'shift27Left'
+  Processing 'LeadingZeros_27'
+  Processing 'nomalizeSum'
+  Processing 'equal27'
+  Processing 'add27'
+  Processing 'sub27'
+  Processing 'addSub'
+  Processing 'subBit_47'
+  Processing 'halfSub_3'
+  Processing 'sub8_1'
+  Processing 'shift27'
+  Processing 'compare24'
+  Processing 'compare_49'
+  Processing 'compare8'
+  Processing 'alignment'
+  Processing 'equalZero23_0'
+  Processing 'float_unpacker'
+  Processing 'FPU'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Allocating blocks in 'DW02_mult_A_width24_B_width24'
+  Building model 'DW01_MUX'
+  Processing 'DW01_MUX'
+  Building model 'DW01_mmux_width2'
+  Processing 'DW01_mmux_width2'
+  Building model 'DW01_mmux_width3'
+  Processing 'DW01_mmux_width3'
+  Building model 'DW01_mmux_width4'
+  Processing 'DW01_mmux_width4'
+  Building model 'DW01_mmux_width5'
+  Processing 'DW01_mmux_width5'
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width46' (cla)
+  Processing 'DW01_add_width46'
+  Building model 'DW02_mult_A_width24_B_width24' (csa)
+  Processing 'DW02_mult_A_width24_B_width24'
+  Processing 'mult_24_DW02_mult_0'
+  Processing 'mult_24_DW01_add_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:12   21468.5      0.00       0.0       0.0                          
+    0:00:12   21468.5      0.00       0.0       0.0                          
+    0:00:13   21577.5      0.00       0.0       0.0                          
+    0:00:13   21681.5      0.00       0.0       0.0                          
+    0:00:14   21798.0      0.00       0.0       0.0                          
+    0:00:14   21982.0      0.00       0.0       0.0                          
+    0:00:14   22152.5      0.00       0.0       0.0                          
+    0:00:14   22327.5      0.00       0.0       0.0                          
+    0:00:17   22973.5      0.00       0.0       0.0                          
+    0:00:17   22973.5      0.00       0.0       0.0                          
+    0:00:17   22973.5      0.00       0.0       0.0                          
+    0:00:17   22973.5      0.00       0.0       0.0                          
+    0:00:17   22973.5      0.00       0.0       0.0                          
+    0:00:18   22238.5      0.00       0.0       0.0                          
+    0:00:18   22238.5      0.00       0.0       0.0                          
+    0:00:18   22238.5      0.00       0.0       0.0                          
+    0:00:19   22238.5      0.00       0.0       0.0                          
+    0:00:19   22238.5      0.00       0.0       0.0                          
+    0:00:19   22238.5      0.00       0.0       0.0                          
+    0:00:19   22238.5      0.00       0.0       0.0                          
+    0:00:19   22238.5      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:19   22238.5      0.00       0.0       0.0                          
+    0:00:19   22238.5      0.00       0.0       0.0                          
+    0:00:19   22238.5      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:19   22238.5      0.00       0.0       0.0                          
+    0:00:19   22238.5      0.00       0.0       0.0                          
+    0:00:20   22215.5      0.00       0.0       0.0                          
+    0:00:20   22194.5      0.00       0.0       0.0                          
+    0:00:20   22157.5      0.00       0.0       0.0                          
+    0:00:20   22135.5      0.00       0.0       0.0                          
+    0:00:20   22113.5      0.00       0.0       0.0                          
+    0:00:20   22095.5      0.00       0.0       0.0                          
+    0:00:20   22095.5      0.00       0.0       0.0                          
+    0:00:20   22095.5      0.00       0.0       0.0                          
+    0:00:20   22095.5      0.00       0.0       0.0                          
+    0:00:20   22095.5      0.00       0.0       0.0                          
+    0:00:20   22095.5      0.00       0.0       0.0                          
+    0:00:20   22095.5      0.00       0.0       0.0                          
+    0:00:20   22095.5      0.00       0.0       0.0                          
+    0:00:21   22095.5      0.00       0.0       0.0                          
+Loading db file '/grading/ece340/cmulib18.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+######################################################################################################
+## write backend file set (verilog, SDC, config, etc.)
+######################################################################################################
+redirect ${_REPORTS_PATH}/area.rpt { report_area }
+redirect ${_REPORTS_PATH}/timing.rpt { report_timing -path full -delay max -max_paths 1 -nworst 1 }
+if { [check_error -verbose] == 1} {
+    exit -822
+}
+quit
+
+Memory usage for this session 183 Mbytes.
+Memory usage for this session including child processes 183 Mbytes.
+CPU usage for this session 27 seconds ( 0.01 hours ).
+Elapsed time for this session 28 seconds ( 0.01 hours ).
+
+Thank you...
+
+
+Area Report:
+ 
+****************************************
+Report : area
+Design : FPU
+Version: T-2022.03-SP2
+Date   : Wed Nov 23 05:18:12 2022
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    CMUlib18 (File: /grading/ece340/cmulib18.db)
+
+Number of ports:                        15393
+Number of nets:                         23990
+Number of cells:                        11797
+Number of combinational cells:           8546
+Number of sequential cells:                97
+Number of macros/black boxes:               0
+Number of buf/inv:                       3447
+Number of references:                      13
+
+Combinational area:              21125.500000
+Buf/Inv area:                     3786.000000
+Noncombinational area:             970.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 22095.500000
+Total area:                 undefined
+1
+
+
+
+Timing Report:
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FPU
+Version: T-2022.03-SP2
+Date   : Wed Nov 23 05:18:12 2022
+****************************************
+
+Operating Conditions: nom_pvt   Library: CMUlib18
+Wire Load Model Mode: top
+
+  Startpoint: B_reg[23] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Y_reg_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  B_reg[23]/clk (dff_1x)                                  0.00       0.00 r
+  B_reg[23]/q (dff_1x)                                    0.28       0.28 r
+  uPack/B[23] (float_unpacker)                            0.00       0.28 r
+  uPack/e1/A[0] (equalZero8_1)                            0.00       0.28 r
+  uPack/e1/genblk1[0].genblk1.e0/A (equalBit0_66)         0.00       0.28 r
+  uPack/e1/genblk1[0].genblk1.e0/i0/A (INV_366)           0.00       0.28 r
+  uPack/e1/genblk1[0].genblk1.e0/i0/U1/Y (inv_1x)         0.02       0.30 f
+  uPack/e1/genblk1[0].genblk1.e0/i0/Y (INV_366)           0.00       0.30 f
+  uPack/e1/genblk1[0].genblk1.e0/a0/A (AND2_487)          0.00       0.30 f
+  uPack/e1/genblk1[0].genblk1.e0/a0/U1/Y (and2_1x)        0.06       0.36 f
+  uPack/e1/genblk1[0].genblk1.e0/a0/Y (AND2_487)          0.00       0.36 f
+  uPack/e1/genblk1[0].genblk1.e0/eqOut (equalBit0_66)     0.00       0.36 f
+  uPack/e1/genblk1[1].genblk1.e1/eqIn (equalBit0_65)      0.00       0.36 f
+  uPack/e1/genblk1[1].genblk1.e1/a0/B (AND2_486)          0.00       0.36 f
+  uPack/e1/genblk1[1].genblk1.e1/a0/U1/Y (and2_1x)        0.05       0.42 f
+  uPack/e1/genblk1[1].genblk1.e1/a0/Y (AND2_486)          0.00       0.42 f
+  uPack/e1/genblk1[1].genblk1.e1/eqOut (equalBit0_65)     0.00       0.42 f
+  uPack/e1/genblk1[2].genblk1.e1/eqIn (equalBit0_64)      0.00       0.42 f
+  uPack/e1/genblk1[2].genblk1.e1/a0/B (AND2_485)          0.00       0.42 f
+  uPack/e1/genblk1[2].genblk1.e1/a0/U1/Y (and2_1x)        0.05       0.47 f
+  uPack/e1/genblk1[2].genblk1.e1/a0/Y (AND2_485)          0.00       0.47 f
+  uPack/e1/genblk1[2].genblk1.e1/eqOut (equalBit0_64)     0.00       0.47 f
+  uPack/e1/genblk1[3].genblk1.e1/eqIn (equalBit0_63)      0.00       0.47 f
+  uPack/e1/genblk1[3].genblk1.e1/a0/B (AND2_484)          0.00       0.47 f
+  uPack/e1/genblk1[3].genblk1.e1/a0/U1/Y (and2_1x)        0.05       0.52 f
+  uPack/e1/genblk1[3].genblk1.e1/a0/Y (AND2_484)          0.00       0.52 f
+  uPack/e1/genblk1[3].genblk1.e1/eqOut (equalBit0_63)     0.00       0.52 f
+  uPack/e1/genblk1[4].genblk1.e1/eqIn (equalBit0_62)      0.00       0.52 f
+  uPack/e1/genblk1[4].genblk1.e1/a0/B (AND2_483)          0.00       0.52 f
+  uPack/e1/genblk1[4].genblk1.e1/a0/U1/Y (and2_1x)        0.05       0.58 f
+  uPack/e1/genblk1[4].genblk1.e1/a0/Y (AND2_483)          0.00       0.58 f
+  uPack/e1/genblk1[4].genblk1.e1/eqOut (equalBit0_62)     0.00       0.58 f
+  uPack/e1/genblk1[5].genblk1.e1/eqIn (equalBit0_61)      0.00       0.58 f
+  uPack/e1/genblk1[5].genblk1.e1/a0/B (AND2_482)          0.00       0.58 f
+  uPack/e1/genblk1[5].genblk1.e1/a0/U1/Y (and2_1x)        0.05       0.63 f
+  uPack/e1/genblk1[5].genblk1.e1/a0/Y (AND2_482)          0.00       0.63 f
+  uPack/e1/genblk1[5].genblk1.e1/eqOut (equalBit0_61)     0.00       0.63 f
+  uPack/e1/genblk1[6].genblk1.e1/eqIn (equalBit0_60)      0.00       0.63 f
+  uPack/e1/genblk1[6].genblk1.e1/a0/B (AND2_481)          0.00       0.63 f
+  uPack/e1/genblk1[6].genblk1.e1/a0/U1/Y (and2_1x)        0.05       0.68 f
+  uPack/e1/genblk1[6].genblk1.e1/a0/Y (AND2_481)          0.00       0.68 f
+  uPack/e1/genblk1[6].genblk1.e1/eqOut (equalBit0_60)     0.00       0.68 f
+  uPack/e1/genblk1[7].genblk1.e1/eqIn (equalBit0_59)      0.00       0.68 f
+  uPack/e1/genblk1[7].genblk1.e1/a0/B (AND2_480)          0.00       0.68 f
+  uPack/e1/genblk1[7].genblk1.e1/a0/U1/Y (and2_1x)        0.07       0.76 f
+  uPack/e1/genblk1[7].genblk1.e1/a0/Y (AND2_480)          0.00       0.76 f
+  uPack/e1/genblk1[7].genblk1.e1/eqOut (equalBit0_59)     0.00       0.76 f
+  uPack/e1/eq (equalZero8_1)                              0.00       0.76 f
+  uPack/m1/sel (mux24_4)                                  0.00       0.76 f
+  uPack/m1/U4/Y (buf_4x)                                  0.33       1.08 f
+  uPack/m1/genblk1[22].m0/sel (MUX2_820)                  0.00       1.08 f
+  uPack/m1/genblk1[22].m0/U1/Y (inv_4x)                   0.05       1.14 r
+  uPack/m1/genblk1[22].m0/U3/Y (aoi22_1x)                 0.05       1.19 f
+  uPack/m1/genblk1[22].m0/U2/Y (inv_1x)                   0.04       1.22 r
+  uPack/m1/genblk1[22].m0/Y (MUX2_820)                    0.00       1.22 r
+  uPack/m1/Y[22] (mux24_4)                                0.00       1.22 r
+  uPack/sigB[22] (float_unpacker)                         0.00       1.22 r
+  U5/Y (buf_4x)                                           0.10       1.32 r
+  align/sigB[22] (alignment)                              0.00       1.32 r
+  align/sigComp/B[22] (compare24)                         0.00       1.32 r
+  align/sigComp/genblk1[23].genblk1.c1/B (compare_40)     0.00       1.32 r
+  align/sigComp/genblk1[23].genblk1.c1/i3/A (INV_273)     0.00       1.32 r
+  align/sigComp/genblk1[23].genblk1.c1/i3/U1/Y (inv_4x)
+                                                          0.02       1.34 f
+  align/sigComp/genblk1[23].genblk1.c1/i3/Y (INV_273)     0.00       1.34 f
+  align/sigComp/genblk1[23].genblk1.c1/a0/B (AND3_129)
+                                                          0.00       1.34 f
+  align/sigComp/genblk1[23].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.10       1.44 f
+  align/sigComp/genblk1[23].genblk1.c1/a0/Y (AND3_129)
+                                                          0.00       1.44 f
+  align/sigComp/genblk1[23].genblk1.c1/o0/B (OR2_258)     0.00       1.44 f
+  align/sigComp/genblk1[23].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       1.51 f
+  align/sigComp/genblk1[23].genblk1.c1/o0/Y (OR2_258)     0.00       1.51 f
+  align/sigComp/genblk1[23].genblk1.c1/gtOut (compare_40)
+                                                          0.00       1.51 f
+  align/sigComp/genblk1[22].genblk1.c1/gtIn (compare_39)
+                                                          0.00       1.51 f
+  align/sigComp/genblk1[22].genblk1.c1/i0/A (INV_272)     0.00       1.51 f
+  align/sigComp/genblk1[22].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       1.54 r
+  align/sigComp/genblk1[22].genblk1.c1/i0/Y (INV_272)     0.00       1.54 r
+  align/sigComp/genblk1[22].genblk1.c1/a1/C (AND3_126)
+                                                          0.00       1.54 r
+  align/sigComp/genblk1[22].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       1.60 r
+  align/sigComp/genblk1[22].genblk1.c1/a1/Y (AND3_126)
+                                                          0.00       1.60 r
+  align/sigComp/genblk1[22].genblk1.c1/o1/B (OR2_255)     0.00       1.60 r
+  align/sigComp/genblk1[22].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       1.68 r
+  align/sigComp/genblk1[22].genblk1.c1/o1/Y (OR2_255)     0.00       1.68 r
+  align/sigComp/genblk1[22].genblk1.c1/ltOut (compare_39)
+                                                          0.00       1.68 r
+  align/sigComp/genblk1[21].genblk1.c1/ltIn (compare_38)
+                                                          0.00       1.68 r
+  align/sigComp/genblk1[21].genblk1.c1/i1/A (INV_267)     0.00       1.68 r
+  align/sigComp/genblk1[21].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       1.70 f
+  align/sigComp/genblk1[21].genblk1.c1/i1/Y (INV_267)     0.00       1.70 f
+  align/sigComp/genblk1[21].genblk1.c1/a0/C (AND3_125)
+                                                          0.00       1.70 f
+  align/sigComp/genblk1[21].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       1.77 f
+  align/sigComp/genblk1[21].genblk1.c1/a0/Y (AND3_125)
+                                                          0.00       1.77 f
+  align/sigComp/genblk1[21].genblk1.c1/o0/B (OR2_254)     0.00       1.77 f
+  align/sigComp/genblk1[21].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       1.85 f
+  align/sigComp/genblk1[21].genblk1.c1/o0/Y (OR2_254)     0.00       1.85 f
+  align/sigComp/genblk1[21].genblk1.c1/gtOut (compare_38)
+                                                          0.00       1.85 f
+  align/sigComp/genblk1[20].genblk1.c1/gtIn (compare_37)
+                                                          0.00       1.85 f
+  align/sigComp/genblk1[20].genblk1.c1/i0/A (INV_264)     0.00       1.85 f
+  align/sigComp/genblk1[20].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       1.88 r
+  align/sigComp/genblk1[20].genblk1.c1/i0/Y (INV_264)     0.00       1.88 r
+  align/sigComp/genblk1[20].genblk1.c1/a1/C (AND3_122)
+                                                          0.00       1.88 r
+  align/sigComp/genblk1[20].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       1.94 r
+  align/sigComp/genblk1[20].genblk1.c1/a1/Y (AND3_122)
+                                                          0.00       1.94 r
+  align/sigComp/genblk1[20].genblk1.c1/o1/B (OR2_251)     0.00       1.94 r
+  align/sigComp/genblk1[20].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       2.02 r
+  align/sigComp/genblk1[20].genblk1.c1/o1/Y (OR2_251)     0.00       2.02 r
+  align/sigComp/genblk1[20].genblk1.c1/ltOut (compare_37)
+                                                          0.00       2.02 r
+  align/sigComp/genblk1[19].genblk1.c1/ltIn (compare_36)
+                                                          0.00       2.02 r
+  align/sigComp/genblk1[19].genblk1.c1/i1/A (INV_259)     0.00       2.02 r
+  align/sigComp/genblk1[19].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       2.04 f
+  align/sigComp/genblk1[19].genblk1.c1/i1/Y (INV_259)     0.00       2.04 f
+  align/sigComp/genblk1[19].genblk1.c1/a0/C (AND3_121)
+                                                          0.00       2.04 f
+  align/sigComp/genblk1[19].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       2.11 f
+  align/sigComp/genblk1[19].genblk1.c1/a0/Y (AND3_121)
+                                                          0.00       2.11 f
+  align/sigComp/genblk1[19].genblk1.c1/o0/B (OR2_250)     0.00       2.11 f
+  align/sigComp/genblk1[19].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       2.19 f
+  align/sigComp/genblk1[19].genblk1.c1/o0/Y (OR2_250)     0.00       2.19 f
+  align/sigComp/genblk1[19].genblk1.c1/gtOut (compare_36)
+                                                          0.00       2.19 f
+  align/sigComp/genblk1[18].genblk1.c1/gtIn (compare_35)
+                                                          0.00       2.19 f
+  align/sigComp/genblk1[18].genblk1.c1/i0/A (INV_256)     0.00       2.19 f
+  align/sigComp/genblk1[18].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       2.22 r
+  align/sigComp/genblk1[18].genblk1.c1/i0/Y (INV_256)     0.00       2.22 r
+  align/sigComp/genblk1[18].genblk1.c1/a1/C (AND3_118)
+                                                          0.00       2.22 r
+  align/sigComp/genblk1[18].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       2.28 r
+  align/sigComp/genblk1[18].genblk1.c1/a1/Y (AND3_118)
+                                                          0.00       2.28 r
+  align/sigComp/genblk1[18].genblk1.c1/o1/B (OR2_247)     0.00       2.28 r
+  align/sigComp/genblk1[18].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       2.35 r
+  align/sigComp/genblk1[18].genblk1.c1/o1/Y (OR2_247)     0.00       2.35 r
+  align/sigComp/genblk1[18].genblk1.c1/ltOut (compare_35)
+                                                          0.00       2.35 r
+  align/sigComp/genblk1[17].genblk1.c1/ltIn (compare_34)
+                                                          0.00       2.35 r
+  align/sigComp/genblk1[17].genblk1.c1/i1/A (INV_251)     0.00       2.35 r
+  align/sigComp/genblk1[17].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       2.37 f
+  align/sigComp/genblk1[17].genblk1.c1/i1/Y (INV_251)     0.00       2.37 f
+  align/sigComp/genblk1[17].genblk1.c1/a0/C (AND3_117)
+                                                          0.00       2.37 f
+  align/sigComp/genblk1[17].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       2.45 f
+  align/sigComp/genblk1[17].genblk1.c1/a0/Y (AND3_117)
+                                                          0.00       2.45 f
+  align/sigComp/genblk1[17].genblk1.c1/o0/B (OR2_246)     0.00       2.45 f
+  align/sigComp/genblk1[17].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       2.52 f
+  align/sigComp/genblk1[17].genblk1.c1/o0/Y (OR2_246)     0.00       2.52 f
+  align/sigComp/genblk1[17].genblk1.c1/gtOut (compare_34)
+                                                          0.00       2.52 f
+  align/sigComp/genblk1[16].genblk1.c1/gtIn (compare_33)
+                                                          0.00       2.52 f
+  align/sigComp/genblk1[16].genblk1.c1/i0/A (INV_248)     0.00       2.52 f
+  align/sigComp/genblk1[16].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       2.55 r
+  align/sigComp/genblk1[16].genblk1.c1/i0/Y (INV_248)     0.00       2.55 r
+  align/sigComp/genblk1[16].genblk1.c1/a1/C (AND3_114)
+                                                          0.00       2.55 r
+  align/sigComp/genblk1[16].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       2.61 r
+  align/sigComp/genblk1[16].genblk1.c1/a1/Y (AND3_114)
+                                                          0.00       2.61 r
+  align/sigComp/genblk1[16].genblk1.c1/o1/B (OR2_243)     0.00       2.61 r
+  align/sigComp/genblk1[16].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       2.69 r
+  align/sigComp/genblk1[16].genblk1.c1/o1/Y (OR2_243)     0.00       2.69 r
+  align/sigComp/genblk1[16].genblk1.c1/ltOut (compare_33)
+                                                          0.00       2.69 r
+  align/sigComp/genblk1[15].genblk1.c1/ltIn (compare_32)
+                                                          0.00       2.69 r
+  align/sigComp/genblk1[15].genblk1.c1/i1/A (INV_243)     0.00       2.69 r
+  align/sigComp/genblk1[15].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       2.71 f
+  align/sigComp/genblk1[15].genblk1.c1/i1/Y (INV_243)     0.00       2.71 f
+  align/sigComp/genblk1[15].genblk1.c1/a0/C (AND3_113)
+                                                          0.00       2.71 f
+  align/sigComp/genblk1[15].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       2.78 f
+  align/sigComp/genblk1[15].genblk1.c1/a0/Y (AND3_113)
+                                                          0.00       2.78 f
+  align/sigComp/genblk1[15].genblk1.c1/o0/B (OR2_242)     0.00       2.78 f
+  align/sigComp/genblk1[15].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       2.86 f
+  align/sigComp/genblk1[15].genblk1.c1/o0/Y (OR2_242)     0.00       2.86 f
+  align/sigComp/genblk1[15].genblk1.c1/gtOut (compare_32)
+                                                          0.00       2.86 f
+  align/sigComp/genblk1[14].genblk1.c1/gtIn (compare_31)
+                                                          0.00       2.86 f
+  align/sigComp/genblk1[14].genblk1.c1/i0/A (INV_240)     0.00       2.86 f
+  align/sigComp/genblk1[14].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       2.89 r
+  align/sigComp/genblk1[14].genblk1.c1/i0/Y (INV_240)     0.00       2.89 r
+  align/sigComp/genblk1[14].genblk1.c1/a1/C (AND3_110)
+                                                          0.00       2.89 r
+  align/sigComp/genblk1[14].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       2.95 r
+  align/sigComp/genblk1[14].genblk1.c1/a1/Y (AND3_110)
+                                                          0.00       2.95 r
+  align/sigComp/genblk1[14].genblk1.c1/o1/B (OR2_239)     0.00       2.95 r
+  align/sigComp/genblk1[14].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       3.03 r
+  align/sigComp/genblk1[14].genblk1.c1/o1/Y (OR2_239)     0.00       3.03 r
+  align/sigComp/genblk1[14].genblk1.c1/ltOut (compare_31)
+                                                          0.00       3.03 r
+  align/sigComp/genblk1[13].genblk1.c1/ltIn (compare_30)
+                                                          0.00       3.03 r
+  align/sigComp/genblk1[13].genblk1.c1/i1/A (INV_235)     0.00       3.03 r
+  align/sigComp/genblk1[13].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       3.05 f
+  align/sigComp/genblk1[13].genblk1.c1/i1/Y (INV_235)     0.00       3.05 f
+  align/sigComp/genblk1[13].genblk1.c1/a0/C (AND3_109)
+                                                          0.00       3.05 f
+  align/sigComp/genblk1[13].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       3.12 f
+  align/sigComp/genblk1[13].genblk1.c1/a0/Y (AND3_109)
+                                                          0.00       3.12 f
+  align/sigComp/genblk1[13].genblk1.c1/o0/B (OR2_238)     0.00       3.12 f
+  align/sigComp/genblk1[13].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       3.20 f
+  align/sigComp/genblk1[13].genblk1.c1/o0/Y (OR2_238)     0.00       3.20 f
+  align/sigComp/genblk1[13].genblk1.c1/gtOut (compare_30)
+                                                          0.00       3.20 f
+  align/sigComp/genblk1[12].genblk1.c1/gtIn (compare_29)
+                                                          0.00       3.20 f
+  align/sigComp/genblk1[12].genblk1.c1/i0/A (INV_232)     0.00       3.20 f
+  align/sigComp/genblk1[12].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       3.23 r
+  align/sigComp/genblk1[12].genblk1.c1/i0/Y (INV_232)     0.00       3.23 r
+  align/sigComp/genblk1[12].genblk1.c1/a1/C (AND3_106)
+                                                          0.00       3.23 r
+  align/sigComp/genblk1[12].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       3.29 r
+  align/sigComp/genblk1[12].genblk1.c1/a1/Y (AND3_106)
+                                                          0.00       3.29 r
+  align/sigComp/genblk1[12].genblk1.c1/o1/B (OR2_235)     0.00       3.29 r
+  align/sigComp/genblk1[12].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       3.37 r
+  align/sigComp/genblk1[12].genblk1.c1/o1/Y (OR2_235)     0.00       3.37 r
+  align/sigComp/genblk1[12].genblk1.c1/ltOut (compare_29)
+                                                          0.00       3.37 r
+  align/sigComp/genblk1[11].genblk1.c1/ltIn (compare_28)
+                                                          0.00       3.37 r
+  align/sigComp/genblk1[11].genblk1.c1/i1/A (INV_227)     0.00       3.37 r
+  align/sigComp/genblk1[11].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       3.39 f
+  align/sigComp/genblk1[11].genblk1.c1/i1/Y (INV_227)     0.00       3.39 f
+  align/sigComp/genblk1[11].genblk1.c1/a0/C (AND3_105)
+                                                          0.00       3.39 f
+  align/sigComp/genblk1[11].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       3.46 f
+  align/sigComp/genblk1[11].genblk1.c1/a0/Y (AND3_105)
+                                                          0.00       3.46 f
+  align/sigComp/genblk1[11].genblk1.c1/o0/B (OR2_234)     0.00       3.46 f
+  align/sigComp/genblk1[11].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       3.53 f
+  align/sigComp/genblk1[11].genblk1.c1/o0/Y (OR2_234)     0.00       3.53 f
+  align/sigComp/genblk1[11].genblk1.c1/gtOut (compare_28)
+                                                          0.00       3.53 f
+  align/sigComp/genblk1[10].genblk1.c1/gtIn (compare_27)
+                                                          0.00       3.53 f
+  align/sigComp/genblk1[10].genblk1.c1/i0/A (INV_224)     0.00       3.53 f
+  align/sigComp/genblk1[10].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       3.56 r
+  align/sigComp/genblk1[10].genblk1.c1/i0/Y (INV_224)     0.00       3.56 r
+  align/sigComp/genblk1[10].genblk1.c1/a1/C (AND3_102)
+                                                          0.00       3.56 r
+  align/sigComp/genblk1[10].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       3.62 r
+  align/sigComp/genblk1[10].genblk1.c1/a1/Y (AND3_102)
+                                                          0.00       3.62 r
+  align/sigComp/genblk1[10].genblk1.c1/o1/B (OR2_231)     0.00       3.62 r
+  align/sigComp/genblk1[10].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       3.70 r
+  align/sigComp/genblk1[10].genblk1.c1/o1/Y (OR2_231)     0.00       3.70 r
+  align/sigComp/genblk1[10].genblk1.c1/ltOut (compare_27)
+                                                          0.00       3.70 r
+  align/sigComp/genblk1[9].genblk1.c1/ltIn (compare_26)
+                                                          0.00       3.70 r
+  align/sigComp/genblk1[9].genblk1.c1/i1/A (INV_219)      0.00       3.70 r
+  align/sigComp/genblk1[9].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       3.72 f
+  align/sigComp/genblk1[9].genblk1.c1/i1/Y (INV_219)      0.00       3.72 f
+  align/sigComp/genblk1[9].genblk1.c1/a0/C (AND3_101)     0.00       3.72 f
+  align/sigComp/genblk1[9].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       3.79 f
+  align/sigComp/genblk1[9].genblk1.c1/a0/Y (AND3_101)     0.00       3.79 f
+  align/sigComp/genblk1[9].genblk1.c1/o0/B (OR2_230)      0.00       3.79 f
+  align/sigComp/genblk1[9].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       3.87 f
+  align/sigComp/genblk1[9].genblk1.c1/o0/Y (OR2_230)      0.00       3.87 f
+  align/sigComp/genblk1[9].genblk1.c1/gtOut (compare_26)
+                                                          0.00       3.87 f
+  align/sigComp/genblk1[8].genblk1.c1/gtIn (compare_25)
+                                                          0.00       3.87 f
+  align/sigComp/genblk1[8].genblk1.c1/i0/A (INV_216)      0.00       3.87 f
+  align/sigComp/genblk1[8].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       3.90 r
+  align/sigComp/genblk1[8].genblk1.c1/i0/Y (INV_216)      0.00       3.90 r
+  align/sigComp/genblk1[8].genblk1.c1/a1/C (AND3_98)      0.00       3.90 r
+  align/sigComp/genblk1[8].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       3.96 r
+  align/sigComp/genblk1[8].genblk1.c1/a1/Y (AND3_98)      0.00       3.96 r
+  align/sigComp/genblk1[8].genblk1.c1/o1/B (OR2_227)      0.00       3.96 r
+  align/sigComp/genblk1[8].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       4.04 r
+  align/sigComp/genblk1[8].genblk1.c1/o1/Y (OR2_227)      0.00       4.04 r
+  align/sigComp/genblk1[8].genblk1.c1/ltOut (compare_25)
+                                                          0.00       4.04 r
+  align/sigComp/genblk1[7].genblk1.c1/ltIn (compare_24)
+                                                          0.00       4.04 r
+  align/sigComp/genblk1[7].genblk1.c1/i1/A (INV_211)      0.00       4.04 r
+  align/sigComp/genblk1[7].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       4.06 f
+  align/sigComp/genblk1[7].genblk1.c1/i1/Y (INV_211)      0.00       4.06 f
+  align/sigComp/genblk1[7].genblk1.c1/a0/C (AND3_97)      0.00       4.06 f
+  align/sigComp/genblk1[7].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       4.13 f
+  align/sigComp/genblk1[7].genblk1.c1/a0/Y (AND3_97)      0.00       4.13 f
+  align/sigComp/genblk1[7].genblk1.c1/o0/B (OR2_226)      0.00       4.13 f
+  align/sigComp/genblk1[7].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       4.21 f
+  align/sigComp/genblk1[7].genblk1.c1/o0/Y (OR2_226)      0.00       4.21 f
+  align/sigComp/genblk1[7].genblk1.c1/gtOut (compare_24)
+                                                          0.00       4.21 f
+  align/sigComp/genblk1[6].genblk1.c1/gtIn (compare_23)
+                                                          0.00       4.21 f
+  align/sigComp/genblk1[6].genblk1.c1/i0/A (INV_208)      0.00       4.21 f
+  align/sigComp/genblk1[6].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       4.24 r
+  align/sigComp/genblk1[6].genblk1.c1/i0/Y (INV_208)      0.00       4.24 r
+  align/sigComp/genblk1[6].genblk1.c1/a1/C (AND3_94)      0.00       4.24 r
+  align/sigComp/genblk1[6].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       4.30 r
+  align/sigComp/genblk1[6].genblk1.c1/a1/Y (AND3_94)      0.00       4.30 r
+  align/sigComp/genblk1[6].genblk1.c1/o1/B (OR2_223)      0.00       4.30 r
+  align/sigComp/genblk1[6].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       4.38 r
+  align/sigComp/genblk1[6].genblk1.c1/o1/Y (OR2_223)      0.00       4.38 r
+  align/sigComp/genblk1[6].genblk1.c1/ltOut (compare_23)
+                                                          0.00       4.38 r
+  align/sigComp/genblk1[5].genblk1.c1/ltIn (compare_22)
+                                                          0.00       4.38 r
+  align/sigComp/genblk1[5].genblk1.c1/i1/A (INV_203)      0.00       4.38 r
+  align/sigComp/genblk1[5].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       4.40 f
+  align/sigComp/genblk1[5].genblk1.c1/i1/Y (INV_203)      0.00       4.40 f
+  align/sigComp/genblk1[5].genblk1.c1/a0/C (AND3_93)      0.00       4.40 f
+  align/sigComp/genblk1[5].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       4.47 f
+  align/sigComp/genblk1[5].genblk1.c1/a0/Y (AND3_93)      0.00       4.47 f
+  align/sigComp/genblk1[5].genblk1.c1/o0/B (OR2_222)      0.00       4.47 f
+  align/sigComp/genblk1[5].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       4.54 f
+  align/sigComp/genblk1[5].genblk1.c1/o0/Y (OR2_222)      0.00       4.54 f
+  align/sigComp/genblk1[5].genblk1.c1/gtOut (compare_22)
+                                                          0.00       4.54 f
+  align/sigComp/genblk1[4].genblk1.c1/gtIn (compare_21)
+                                                          0.00       4.54 f
+  align/sigComp/genblk1[4].genblk1.c1/i0/A (INV_200)      0.00       4.54 f
+  align/sigComp/genblk1[4].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       4.57 r
+  align/sigComp/genblk1[4].genblk1.c1/i0/Y (INV_200)      0.00       4.57 r
+  align/sigComp/genblk1[4].genblk1.c1/a1/C (AND3_90)      0.00       4.57 r
+  align/sigComp/genblk1[4].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       4.63 r
+  align/sigComp/genblk1[4].genblk1.c1/a1/Y (AND3_90)      0.00       4.63 r
+  align/sigComp/genblk1[4].genblk1.c1/o1/B (OR2_219)      0.00       4.63 r
+  align/sigComp/genblk1[4].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       4.71 r
+  align/sigComp/genblk1[4].genblk1.c1/o1/Y (OR2_219)      0.00       4.71 r
+  align/sigComp/genblk1[4].genblk1.c1/ltOut (compare_21)
+                                                          0.00       4.71 r
+  align/sigComp/genblk1[3].genblk1.c1/ltIn (compare_20)
+                                                          0.00       4.71 r
+  align/sigComp/genblk1[3].genblk1.c1/i1/A (INV_195)      0.00       4.71 r
+  align/sigComp/genblk1[3].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       4.73 f
+  align/sigComp/genblk1[3].genblk1.c1/i1/Y (INV_195)      0.00       4.73 f
+  align/sigComp/genblk1[3].genblk1.c1/a0/C (AND3_89)      0.00       4.73 f
+  align/sigComp/genblk1[3].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       4.80 f
+  align/sigComp/genblk1[3].genblk1.c1/a0/Y (AND3_89)      0.00       4.80 f
+  align/sigComp/genblk1[3].genblk1.c1/o0/B (OR2_218)      0.00       4.80 f
+  align/sigComp/genblk1[3].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.08       4.88 f
+  align/sigComp/genblk1[3].genblk1.c1/o0/Y (OR2_218)      0.00       4.88 f
+  align/sigComp/genblk1[3].genblk1.c1/gtOut (compare_20)
+                                                          0.00       4.88 f
+  align/sigComp/genblk1[2].genblk1.c1/gtIn (compare_19)
+                                                          0.00       4.88 f
+  align/sigComp/genblk1[2].genblk1.c1/i0/A (INV_192)      0.00       4.88 f
+  align/sigComp/genblk1[2].genblk1.c1/i0/U1/Y (inv_1x)
+                                                          0.03       4.91 r
+  align/sigComp/genblk1[2].genblk1.c1/i0/Y (INV_192)      0.00       4.91 r
+  align/sigComp/genblk1[2].genblk1.c1/a1/C (AND3_86)      0.00       4.91 r
+  align/sigComp/genblk1[2].genblk1.c1/a1/U1/Y (and3_1x)
+                                                          0.06       4.97 r
+  align/sigComp/genblk1[2].genblk1.c1/a1/Y (AND3_86)      0.00       4.97 r
+  align/sigComp/genblk1[2].genblk1.c1/o1/B (OR2_215)      0.00       4.97 r
+  align/sigComp/genblk1[2].genblk1.c1/o1/U1/Y (or2_1x)
+                                                          0.08       5.05 r
+  align/sigComp/genblk1[2].genblk1.c1/o1/Y (OR2_215)      0.00       5.05 r
+  align/sigComp/genblk1[2].genblk1.c1/ltOut (compare_19)
+                                                          0.00       5.05 r
+  align/sigComp/genblk1[1].genblk1.c1/ltIn (compare_18)
+                                                          0.00       5.05 r
+  align/sigComp/genblk1[1].genblk1.c1/i1/A (INV_187)      0.00       5.05 r
+  align/sigComp/genblk1[1].genblk1.c1/i1/U1/Y (inv_1x)
+                                                          0.02       5.07 f
+  align/sigComp/genblk1[1].genblk1.c1/i1/Y (INV_187)      0.00       5.07 f
+  align/sigComp/genblk1[1].genblk1.c1/a0/C (AND3_85)      0.00       5.07 f
+  align/sigComp/genblk1[1].genblk1.c1/a0/U1/Y (and3_1x)
+                                                          0.07       5.14 f
+  align/sigComp/genblk1[1].genblk1.c1/a0/Y (AND3_85)      0.00       5.14 f
+  align/sigComp/genblk1[1].genblk1.c1/o0/B (OR2_214)      0.00       5.14 f
+  align/sigComp/genblk1[1].genblk1.c1/o0/U1/Y (or2_1x)
+                                                          0.07       5.21 f
+  align/sigComp/genblk1[1].genblk1.c1/o0/Y (OR2_214)      0.00       5.21 f
+  align/sigComp/genblk1[1].genblk1.c1/gtOut (compare_18)
+                                                          0.00       5.21 f
+  align/sigComp/gt (compare24)                            0.00       5.21 f
+  align/o0/A (OR2_294)                                    0.00       5.21 f
+  align/o0/U1/Y (or2_1x)                                  0.05       5.27 f
+  align/o0/Y (OR2_294)                                    0.00       5.27 f
+  align/a0/B (AND2_507)                                   0.00       5.27 f
+  align/a0/U1/Y (and2_1x)                                 0.06       5.32 f
+  align/a0/Y (AND2_507)                                   0.00       5.32 f
+  align/o1/A (OR2_293)                                    0.00       5.32 f
+  align/o1/U1/Y (or2_1x)                                  0.06       5.39 f
+  align/o1/Y (OR2_293)                                    0.00       5.39 f
+  align/U2/Y (buf_4x)                                     0.12       5.51 f
+  align/m6/sel (mux27_15)                                 0.00       5.51 f
+  align/m6/U8/Y (buf_4x)                                  0.10       5.61 f
+  align/m6/U7/Y (inv_4x)                                  0.06       5.67 r
+  align/m6/U1/Y (inv_4x)                                  0.07       5.74 f
+  align/m6/genblk1[3].m0/sel (MUX2_772)                   0.00       5.74 f
+  align/m6/genblk1[3].m0/U3/Y (aoi22_1x)                  0.06       5.81 r
+  align/m6/genblk1[3].m0/U2/Y (inv_1x)                    0.05       5.85 f
+  align/m6/genblk1[3].m0/Y (MUX2_772)                     0.00       5.85 f
+  align/m6/Y[3] (mux27_15)                                0.00       5.85 f
+  align/sticky/NumSig[3] (getSticky_27_1)                 0.00       5.85 f
+  align/sticky/U67/Y (nor2_1x)                            0.06       5.91 r
+  align/sticky/U66/Y (nand2_1x)                           0.05       5.95 f
+  align/sticky/U65/Y (or2_1x)                             0.08       6.04 f
+  align/sticky/U64/Y (or2_1x)                             0.08       6.12 f
+  align/sticky/U63/Y (or2_1x)                             0.08       6.20 f
+  align/sticky/U53/Y (or2_1x)                             0.08       6.28 f
+  align/sticky/U52/Y (or2_1x)                             0.08       6.36 f
+  align/sticky/U51/Y (or2_1x)                             0.08       6.44 f
+  align/sticky/U50/Y (or2_1x)                             0.09       6.53 f
+  align/sticky/U49/Y (or2_1x)                             0.09       6.62 f
+  align/sticky/U48/Y (or2_1x)                             0.08       6.70 f
+  align/sticky/U47/Y (or2_1x)                             0.08       6.78 f
+  align/sticky/U46/Y (or2_1x)                             0.09       6.87 f
+  align/sticky/U45/Y (or2_1x)                             0.08       6.95 f
+  align/sticky/U44/Y (or2_1x)                             0.08       7.03 f
+  align/sticky/U43/Y (or2_1x)                             0.08       7.11 f
+  align/sticky/U42/Y (or2_1x)                             0.09       7.20 f
+  align/sticky/U41/Y (or2_1x)                             0.09       7.29 f
+  align/sticky/U40/Y (or2_1x)                             0.08       7.37 f
+  align/sticky/U39/Y (or2_1x)                             0.08       7.45 f
+  align/sticky/U38/Y (or2_1x)                             0.09       7.54 f
+  align/sticky/U31/Y (nor2_1x)                            0.05       7.60 r
+  align/sticky/U10/Y (inv_1x)                             0.02       7.62 f
+  align/sticky/U30/Y (oai22_1x)                           0.06       7.68 r
+  align/sticky/U29/Y (oai21_1x)                           0.03       7.71 f
+  align/sticky/U28/Y (aoi21_1x)                           0.05       7.76 r
+  align/sticky/U27/Y (or3_1x)                             0.09       7.85 r
+  align/sticky/U26/Y (oai21_1x)                           0.04       7.89 f
+  align/sticky/U18/Y (aoi211_1x)                          0.07       7.96 r
+  align/sticky/U17/Y (nand4_1x)                           0.08       8.05 f
+  align/sticky/sticky_shift (getSticky_27_1)              0.00       8.05 f
+  align/numY[0] (alignment)                               0.00       8.05 f
+  adder/Y[0] (addSub)                                     0.00       8.05 f
+  adder/subXY/B[0] (sub27)                                0.00       8.05 f
+  adder/subXY/genblk1[0].genblk1.s0/B (halfSub_2)         0.00       8.05 f
+  adder/subXY/genblk1[0].genblk1.s0/a0/B (AND2_395)       0.00       8.05 f
+  adder/subXY/genblk1[0].genblk1.s0/a0/U1/Y (and2_1x)     0.10       8.15 f
+  adder/subXY/genblk1[0].genblk1.s0/a0/Y (AND2_395)       0.00       8.15 f
+  adder/subXY/genblk1[0].genblk1.s0/bOut (halfSub_2)      0.00       8.15 f
+  adder/subXY/genblk1[1].genblk1.s1/bIn (subBit_40)       0.00       8.15 f
+  adder/subXY/genblk1[1].genblk1.s1/o1/B (OR2_190)        0.00       8.15 f
+  adder/subXY/genblk1[1].genblk1.s1/o1/U1/Y (or2_1x)      0.07       8.22 f
+  adder/subXY/genblk1[1].genblk1.s1/o1/Y (OR2_190)        0.00       8.22 f
+  adder/subXY/genblk1[1].genblk1.s1/a3/A (AND2_392)       0.00       8.22 f
+  adder/subXY/genblk1[1].genblk1.s1/a3/U1/Y (and2_1x)     0.07       8.29 f
+  adder/subXY/genblk1[1].genblk1.s1/a3/Y (AND2_392)       0.00       8.29 f
+  adder/subXY/genblk1[1].genblk1.s1/o2/A (OR2_189)        0.00       8.29 f
+  adder/subXY/genblk1[1].genblk1.s1/o2/U1/Y (or2_1x)      0.08       8.37 f
+  adder/subXY/genblk1[1].genblk1.s1/o2/Y (OR2_189)        0.00       8.37 f
+  adder/subXY/genblk1[1].genblk1.s1/bOut (subBit_40)      0.00       8.37 f
+  adder/subXY/genblk1[2].genblk1.s1/bIn (subBit_39)       0.00       8.37 f
+  adder/subXY/genblk1[2].genblk1.s1/o1/B (OR2_187)        0.00       8.37 f
+  adder/subXY/genblk1[2].genblk1.s1/o1/U1/Y (or2_1x)      0.06       8.44 f
+  adder/subXY/genblk1[2].genblk1.s1/o1/Y (OR2_187)        0.00       8.44 f
+  adder/subXY/genblk1[2].genblk1.s1/a3/A (AND2_389)       0.00       8.44 f
+  adder/subXY/genblk1[2].genblk1.s1/a3/U1/Y (and2_1x)     0.07       8.51 f
+  adder/subXY/genblk1[2].genblk1.s1/a3/Y (AND2_389)       0.00       8.51 f
+  adder/subXY/genblk1[2].genblk1.s1/o2/A (OR2_186)        0.00       8.51 f
+  adder/subXY/genblk1[2].genblk1.s1/o2/U1/Y (or2_1x)      0.08       8.59 f
+  adder/subXY/genblk1[2].genblk1.s1/o2/Y (OR2_186)        0.00       8.59 f
+  adder/subXY/genblk1[2].genblk1.s1/bOut (subBit_39)      0.00       8.59 f
+  adder/subXY/genblk1[3].genblk1.s1/bIn (subBit_38)       0.00       8.59 f
+  adder/subXY/genblk1[3].genblk1.s1/o1/B (OR2_184)        0.00       8.59 f
+  adder/subXY/genblk1[3].genblk1.s1/o1/U1/Y (or2_1x)      0.06       8.65 f
+  adder/subXY/genblk1[3].genblk1.s1/o1/Y (OR2_184)        0.00       8.65 f
+  adder/subXY/genblk1[3].genblk1.s1/a3/A (AND2_386)       0.00       8.65 f
+  adder/subXY/genblk1[3].genblk1.s1/a3/U1/Y (and2_1x)     0.07       8.72 f
+  adder/subXY/genblk1[3].genblk1.s1/a3/Y (AND2_386)       0.00       8.72 f
+  adder/subXY/genblk1[3].genblk1.s1/o2/A (OR2_183)        0.00       8.72 f
+  adder/subXY/genblk1[3].genblk1.s1/o2/U1/Y (or2_1x)      0.08       8.81 f
+  adder/subXY/genblk1[3].genblk1.s1/o2/Y (OR2_183)        0.00       8.81 f
+  adder/subXY/genblk1[3].genblk1.s1/bOut (subBit_38)      0.00       8.81 f
+  adder/subXY/genblk1[4].genblk1.s1/bIn (subBit_37)       0.00       8.81 f
+  adder/subXY/genblk1[4].genblk1.s1/o1/B (OR2_181)        0.00       8.81 f
+  adder/subXY/genblk1[4].genblk1.s1/o1/U1/Y (or2_1x)      0.06       8.87 f
+  adder/subXY/genblk1[4].genblk1.s1/o1/Y (OR2_181)        0.00       8.87 f
+  adder/subXY/genblk1[4].genblk1.s1/a3/A (AND2_383)       0.00       8.87 f
+  adder/subXY/genblk1[4].genblk1.s1/a3/U1/Y (and2_1x)     0.07       8.94 f
+  adder/subXY/genblk1[4].genblk1.s1/a3/Y (AND2_383)       0.00       8.94 f
+  adder/subXY/genblk1[4].genblk1.s1/o2/A (OR2_180)        0.00       8.94 f
+  adder/subXY/genblk1[4].genblk1.s1/o2/U1/Y (or2_1x)      0.08       9.02 f
+  adder/subXY/genblk1[4].genblk1.s1/o2/Y (OR2_180)        0.00       9.02 f
+  adder/subXY/genblk1[4].genblk1.s1/bOut (subBit_37)      0.00       9.02 f
+  adder/subXY/genblk1[5].genblk1.s1/bIn (subBit_36)       0.00       9.02 f
+  adder/subXY/genblk1[5].genblk1.s1/o1/B (OR2_178)        0.00       9.02 f
+  adder/subXY/genblk1[5].genblk1.s1/o1/U1/Y (or2_1x)      0.06       9.09 f
+  adder/subXY/genblk1[5].genblk1.s1/o1/Y (OR2_178)        0.00       9.09 f
+  adder/subXY/genblk1[5].genblk1.s1/a3/A (AND2_380)       0.00       9.09 f
+  adder/subXY/genblk1[5].genblk1.s1/a3/U1/Y (and2_1x)     0.07       9.16 f
+  adder/subXY/genblk1[5].genblk1.s1/a3/Y (AND2_380)       0.00       9.16 f
+  adder/subXY/genblk1[5].genblk1.s1/o2/A (OR2_177)        0.00       9.16 f
+  adder/subXY/genblk1[5].genblk1.s1/o2/U1/Y (or2_1x)      0.08       9.24 f
+  adder/subXY/genblk1[5].genblk1.s1/o2/Y (OR2_177)        0.00       9.24 f
+  adder/subXY/genblk1[5].genblk1.s1/bOut (subBit_36)      0.00       9.24 f
+  adder/subXY/genblk1[6].genblk1.s1/bIn (subBit_35)       0.00       9.24 f
+  adder/subXY/genblk1[6].genblk1.s1/o1/B (OR2_175)        0.00       9.24 f
+  adder/subXY/genblk1[6].genblk1.s1/o1/U1/Y (or2_1x)      0.06       9.30 f
+  adder/subXY/genblk1[6].genblk1.s1/o1/Y (OR2_175)        0.00       9.30 f
+  adder/subXY/genblk1[6].genblk1.s1/a3/A (AND2_377)       0.00       9.30 f
+  adder/subXY/genblk1[6].genblk1.s1/a3/U1/Y (and2_1x)     0.07       9.38 f
+  adder/subXY/genblk1[6].genblk1.s1/a3/Y (AND2_377)       0.00       9.38 f
+  adder/subXY/genblk1[6].genblk1.s1/o2/A (OR2_174)        0.00       9.38 f
+  adder/subXY/genblk1[6].genblk1.s1/o2/U1/Y (or2_1x)      0.08       9.46 f
+  adder/subXY/genblk1[6].genblk1.s1/o2/Y (OR2_174)        0.00       9.46 f
+  adder/subXY/genblk1[6].genblk1.s1/bOut (subBit_35)      0.00       9.46 f
+  adder/subXY/genblk1[7].genblk1.s1/bIn (subBit_34)       0.00       9.46 f
+  adder/subXY/genblk1[7].genblk1.s1/o1/B (OR2_172)        0.00       9.46 f
+  adder/subXY/genblk1[7].genblk1.s1/o1/U1/Y (or2_1x)      0.06       9.52 f
+  adder/subXY/genblk1[7].genblk1.s1/o1/Y (OR2_172)        0.00       9.52 f
+  adder/subXY/genblk1[7].genblk1.s1/a3/A (AND2_374)       0.00       9.52 f
+  adder/subXY/genblk1[7].genblk1.s1/a3/U1/Y (and2_1x)     0.07       9.59 f
+  adder/subXY/genblk1[7].genblk1.s1/a3/Y (AND2_374)       0.00       9.59 f
+  adder/subXY/genblk1[7].genblk1.s1/o2/A (OR2_171)        0.00       9.59 f
+  adder/subXY/genblk1[7].genblk1.s1/o2/U1/Y (or2_1x)      0.08       9.68 f
+  adder/subXY/genblk1[7].genblk1.s1/o2/Y (OR2_171)        0.00       9.68 f
+  adder/subXY/genblk1[7].genblk1.s1/bOut (subBit_34)      0.00       9.68 f
+  adder/subXY/genblk1[8].genblk1.s1/bIn (subBit_33)       0.00       9.68 f
+  adder/subXY/genblk1[8].genblk1.s1/o1/B (OR2_169)        0.00       9.68 f
+  adder/subXY/genblk1[8].genblk1.s1/o1/U1/Y (or2_1x)      0.06       9.74 f
+  adder/subXY/genblk1[8].genblk1.s1/o1/Y (OR2_169)        0.00       9.74 f
+  adder/subXY/genblk1[8].genblk1.s1/a3/A (AND2_371)       0.00       9.74 f
+  adder/subXY/genblk1[8].genblk1.s1/a3/U1/Y (and2_1x)     0.07       9.81 f
+  adder/subXY/genblk1[8].genblk1.s1/a3/Y (AND2_371)       0.00       9.81 f
+  adder/subXY/genblk1[8].genblk1.s1/o2/A (OR2_168)        0.00       9.81 f
+  adder/subXY/genblk1[8].genblk1.s1/o2/U1/Y (or2_1x)      0.08       9.89 f
+  adder/subXY/genblk1[8].genblk1.s1/o2/Y (OR2_168)        0.00       9.89 f
+  adder/subXY/genblk1[8].genblk1.s1/bOut (subBit_33)      0.00       9.89 f
+  adder/subXY/genblk1[9].genblk1.s1/bIn (subBit_32)       0.00       9.89 f
+  adder/subXY/genblk1[9].genblk1.s1/o1/B (OR2_166)        0.00       9.89 f
+  adder/subXY/genblk1[9].genblk1.s1/o1/U1/Y (or2_1x)      0.06       9.96 f
+  adder/subXY/genblk1[9].genblk1.s1/o1/Y (OR2_166)        0.00       9.96 f
+  adder/subXY/genblk1[9].genblk1.s1/a3/A (AND2_368)       0.00       9.96 f
+  adder/subXY/genblk1[9].genblk1.s1/a3/U1/Y (and2_1x)     0.07      10.03 f
+  adder/subXY/genblk1[9].genblk1.s1/a3/Y (AND2_368)       0.00      10.03 f
+  adder/subXY/genblk1[9].genblk1.s1/o2/A (OR2_165)        0.00      10.03 f
+  adder/subXY/genblk1[9].genblk1.s1/o2/U1/Y (or2_1x)      0.08      10.11 f
+  adder/subXY/genblk1[9].genblk1.s1/o2/Y (OR2_165)        0.00      10.11 f
+  adder/subXY/genblk1[9].genblk1.s1/bOut (subBit_32)      0.00      10.11 f
+  adder/subXY/genblk1[10].genblk1.s1/bIn (subBit_31)      0.00      10.11 f
+  adder/subXY/genblk1[10].genblk1.s1/o1/B (OR2_163)       0.00      10.11 f
+  adder/subXY/genblk1[10].genblk1.s1/o1/U1/Y (or2_1x)     0.06      10.17 f
+  adder/subXY/genblk1[10].genblk1.s1/o1/Y (OR2_163)       0.00      10.17 f
+  adder/subXY/genblk1[10].genblk1.s1/a3/A (AND2_365)      0.00      10.17 f
+  adder/subXY/genblk1[10].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      10.24 f
+  adder/subXY/genblk1[10].genblk1.s1/a3/Y (AND2_365)      0.00      10.24 f
+  adder/subXY/genblk1[10].genblk1.s1/o2/A (OR2_162)       0.00      10.24 f
+  adder/subXY/genblk1[10].genblk1.s1/o2/U1/Y (or2_1x)     0.08      10.33 f
+  adder/subXY/genblk1[10].genblk1.s1/o2/Y (OR2_162)       0.00      10.33 f
+  adder/subXY/genblk1[10].genblk1.s1/bOut (subBit_31)     0.00      10.33 f
+  adder/subXY/genblk1[11].genblk1.s1/bIn (subBit_30)      0.00      10.33 f
+  adder/subXY/genblk1[11].genblk1.s1/o1/B (OR2_160)       0.00      10.33 f
+  adder/subXY/genblk1[11].genblk1.s1/o1/U1/Y (or2_1x)     0.06      10.39 f
+  adder/subXY/genblk1[11].genblk1.s1/o1/Y (OR2_160)       0.00      10.39 f
+  adder/subXY/genblk1[11].genblk1.s1/a3/A (AND2_362)      0.00      10.39 f
+  adder/subXY/genblk1[11].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      10.46 f
+  adder/subXY/genblk1[11].genblk1.s1/a3/Y (AND2_362)      0.00      10.46 f
+  adder/subXY/genblk1[11].genblk1.s1/o2/A (OR2_159)       0.00      10.46 f
+  adder/subXY/genblk1[11].genblk1.s1/o2/U1/Y (or2_1x)     0.08      10.54 f
+  adder/subXY/genblk1[11].genblk1.s1/o2/Y (OR2_159)       0.00      10.54 f
+  adder/subXY/genblk1[11].genblk1.s1/bOut (subBit_30)     0.00      10.54 f
+  adder/subXY/genblk1[12].genblk1.s1/bIn (subBit_29)      0.00      10.54 f
+  adder/subXY/genblk1[12].genblk1.s1/o1/B (OR2_157)       0.00      10.54 f
+  adder/subXY/genblk1[12].genblk1.s1/o1/U1/Y (or2_1x)     0.06      10.61 f
+  adder/subXY/genblk1[12].genblk1.s1/o1/Y (OR2_157)       0.00      10.61 f
+  adder/subXY/genblk1[12].genblk1.s1/a3/A (AND2_359)      0.00      10.61 f
+  adder/subXY/genblk1[12].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      10.68 f
+  adder/subXY/genblk1[12].genblk1.s1/a3/Y (AND2_359)      0.00      10.68 f
+  adder/subXY/genblk1[12].genblk1.s1/o2/A (OR2_156)       0.00      10.68 f
+  adder/subXY/genblk1[12].genblk1.s1/o2/U1/Y (or2_1x)     0.08      10.76 f
+  adder/subXY/genblk1[12].genblk1.s1/o2/Y (OR2_156)       0.00      10.76 f
+  adder/subXY/genblk1[12].genblk1.s1/bOut (subBit_29)     0.00      10.76 f
+  adder/subXY/genblk1[13].genblk1.s1/bIn (subBit_28)      0.00      10.76 f
+  adder/subXY/genblk1[13].genblk1.s1/o1/B (OR2_154)       0.00      10.76 f
+  adder/subXY/genblk1[13].genblk1.s1/o1/U1/Y (or2_1x)     0.06      10.83 f
+  adder/subXY/genblk1[13].genblk1.s1/o1/Y (OR2_154)       0.00      10.83 f
+  adder/subXY/genblk1[13].genblk1.s1/a3/A (AND2_356)      0.00      10.83 f
+  adder/subXY/genblk1[13].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      10.90 f
+  adder/subXY/genblk1[13].genblk1.s1/a3/Y (AND2_356)      0.00      10.90 f
+  adder/subXY/genblk1[13].genblk1.s1/o2/A (OR2_153)       0.00      10.90 f
+  adder/subXY/genblk1[13].genblk1.s1/o2/U1/Y (or2_1x)     0.08      10.98 f
+  adder/subXY/genblk1[13].genblk1.s1/o2/Y (OR2_153)       0.00      10.98 f
+  adder/subXY/genblk1[13].genblk1.s1/bOut (subBit_28)     0.00      10.98 f
+  adder/subXY/genblk1[14].genblk1.s1/bIn (subBit_27)      0.00      10.98 f
+  adder/subXY/genblk1[14].genblk1.s1/o1/B (OR2_151)       0.00      10.98 f
+  adder/subXY/genblk1[14].genblk1.s1/o1/U1/Y (or2_1x)     0.06      11.04 f
+  adder/subXY/genblk1[14].genblk1.s1/o1/Y (OR2_151)       0.00      11.04 f
+  adder/subXY/genblk1[14].genblk1.s1/a3/A (AND2_353)      0.00      11.04 f
+  adder/subXY/genblk1[14].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      11.11 f
+  adder/subXY/genblk1[14].genblk1.s1/a3/Y (AND2_353)      0.00      11.11 f
+  adder/subXY/genblk1[14].genblk1.s1/o2/A (OR2_150)       0.00      11.11 f
+  adder/subXY/genblk1[14].genblk1.s1/o2/U1/Y (or2_1x)     0.08      11.20 f
+  adder/subXY/genblk1[14].genblk1.s1/o2/Y (OR2_150)       0.00      11.20 f
+  adder/subXY/genblk1[14].genblk1.s1/bOut (subBit_27)     0.00      11.20 f
+  adder/subXY/genblk1[15].genblk1.s1/bIn (subBit_26)      0.00      11.20 f
+  adder/subXY/genblk1[15].genblk1.s1/o1/B (OR2_148)       0.00      11.20 f
+  adder/subXY/genblk1[15].genblk1.s1/o1/U1/Y (or2_1x)     0.06      11.26 f
+  adder/subXY/genblk1[15].genblk1.s1/o1/Y (OR2_148)       0.00      11.26 f
+  adder/subXY/genblk1[15].genblk1.s1/a3/A (AND2_350)      0.00      11.26 f
+  adder/subXY/genblk1[15].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      11.33 f
+  adder/subXY/genblk1[15].genblk1.s1/a3/Y (AND2_350)      0.00      11.33 f
+  adder/subXY/genblk1[15].genblk1.s1/o2/A (OR2_147)       0.00      11.33 f
+  adder/subXY/genblk1[15].genblk1.s1/o2/U1/Y (or2_1x)     0.08      11.41 f
+  adder/subXY/genblk1[15].genblk1.s1/o2/Y (OR2_147)       0.00      11.41 f
+  adder/subXY/genblk1[15].genblk1.s1/bOut (subBit_26)     0.00      11.41 f
+  adder/subXY/genblk1[16].genblk1.s1/bIn (subBit_25)      0.00      11.41 f
+  adder/subXY/genblk1[16].genblk1.s1/o1/B (OR2_145)       0.00      11.41 f
+  adder/subXY/genblk1[16].genblk1.s1/o1/U1/Y (or2_1x)     0.06      11.48 f
+  adder/subXY/genblk1[16].genblk1.s1/o1/Y (OR2_145)       0.00      11.48 f
+  adder/subXY/genblk1[16].genblk1.s1/a3/A (AND2_347)      0.00      11.48 f
+  adder/subXY/genblk1[16].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      11.55 f
+  adder/subXY/genblk1[16].genblk1.s1/a3/Y (AND2_347)      0.00      11.55 f
+  adder/subXY/genblk1[16].genblk1.s1/o2/A (OR2_144)       0.00      11.55 f
+  adder/subXY/genblk1[16].genblk1.s1/o2/U1/Y (or2_1x)     0.08      11.63 f
+  adder/subXY/genblk1[16].genblk1.s1/o2/Y (OR2_144)       0.00      11.63 f
+  adder/subXY/genblk1[16].genblk1.s1/bOut (subBit_25)     0.00      11.63 f
+  adder/subXY/genblk1[17].genblk1.s1/bIn (subBit_24)      0.00      11.63 f
+  adder/subXY/genblk1[17].genblk1.s1/o1/B (OR2_142)       0.00      11.63 f
+  adder/subXY/genblk1[17].genblk1.s1/o1/U1/Y (or2_1x)     0.06      11.70 f
+  adder/subXY/genblk1[17].genblk1.s1/o1/Y (OR2_142)       0.00      11.70 f
+  adder/subXY/genblk1[17].genblk1.s1/a3/A (AND2_344)      0.00      11.70 f
+  adder/subXY/genblk1[17].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      11.77 f
+  adder/subXY/genblk1[17].genblk1.s1/a3/Y (AND2_344)      0.00      11.77 f
+  adder/subXY/genblk1[17].genblk1.s1/o2/A (OR2_141)       0.00      11.77 f
+  adder/subXY/genblk1[17].genblk1.s1/o2/U1/Y (or2_1x)     0.08      11.85 f
+  adder/subXY/genblk1[17].genblk1.s1/o2/Y (OR2_141)       0.00      11.85 f
+  adder/subXY/genblk1[17].genblk1.s1/bOut (subBit_24)     0.00      11.85 f
+  adder/subXY/genblk1[18].genblk1.s1/bIn (subBit_23)      0.00      11.85 f
+  adder/subXY/genblk1[18].genblk1.s1/o1/B (OR2_139)       0.00      11.85 f
+  adder/subXY/genblk1[18].genblk1.s1/o1/U1/Y (or2_1x)     0.06      11.91 f
+  adder/subXY/genblk1[18].genblk1.s1/o1/Y (OR2_139)       0.00      11.91 f
+  adder/subXY/genblk1[18].genblk1.s1/a3/A (AND2_341)      0.00      11.91 f
+  adder/subXY/genblk1[18].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      11.98 f
+  adder/subXY/genblk1[18].genblk1.s1/a3/Y (AND2_341)      0.00      11.98 f
+  adder/subXY/genblk1[18].genblk1.s1/o2/A (OR2_138)       0.00      11.98 f
+  adder/subXY/genblk1[18].genblk1.s1/o2/U1/Y (or2_1x)     0.08      12.07 f
+  adder/subXY/genblk1[18].genblk1.s1/o2/Y (OR2_138)       0.00      12.07 f
+  adder/subXY/genblk1[18].genblk1.s1/bOut (subBit_23)     0.00      12.07 f
+  adder/subXY/genblk1[19].genblk1.s1/bIn (subBit_22)      0.00      12.07 f
+  adder/subXY/genblk1[19].genblk1.s1/o1/B (OR2_136)       0.00      12.07 f
+  adder/subXY/genblk1[19].genblk1.s1/o1/U1/Y (or2_1x)     0.06      12.13 f
+  adder/subXY/genblk1[19].genblk1.s1/o1/Y (OR2_136)       0.00      12.13 f
+  adder/subXY/genblk1[19].genblk1.s1/a3/A (AND2_338)      0.00      12.13 f
+  adder/subXY/genblk1[19].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      12.20 f
+  adder/subXY/genblk1[19].genblk1.s1/a3/Y (AND2_338)      0.00      12.20 f
+  adder/subXY/genblk1[19].genblk1.s1/o2/A (OR2_135)       0.00      12.20 f
+  adder/subXY/genblk1[19].genblk1.s1/o2/U1/Y (or2_1x)     0.08      12.28 f
+  adder/subXY/genblk1[19].genblk1.s1/o2/Y (OR2_135)       0.00      12.28 f
+  adder/subXY/genblk1[19].genblk1.s1/bOut (subBit_22)     0.00      12.28 f
+  adder/subXY/genblk1[20].genblk1.s1/bIn (subBit_21)      0.00      12.28 f
+  adder/subXY/genblk1[20].genblk1.s1/o1/B (OR2_133)       0.00      12.28 f
+  adder/subXY/genblk1[20].genblk1.s1/o1/U1/Y (or2_1x)     0.06      12.35 f
+  adder/subXY/genblk1[20].genblk1.s1/o1/Y (OR2_133)       0.00      12.35 f
+  adder/subXY/genblk1[20].genblk1.s1/a3/A (AND2_335)      0.00      12.35 f
+  adder/subXY/genblk1[20].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      12.42 f
+  adder/subXY/genblk1[20].genblk1.s1/a3/Y (AND2_335)      0.00      12.42 f
+  adder/subXY/genblk1[20].genblk1.s1/o2/A (OR2_132)       0.00      12.42 f
+  adder/subXY/genblk1[20].genblk1.s1/o2/U1/Y (or2_1x)     0.08      12.50 f
+  adder/subXY/genblk1[20].genblk1.s1/o2/Y (OR2_132)       0.00      12.50 f
+  adder/subXY/genblk1[20].genblk1.s1/bOut (subBit_21)     0.00      12.50 f
+  adder/subXY/genblk1[21].genblk1.s1/bIn (subBit_20)      0.00      12.50 f
+  adder/subXY/genblk1[21].genblk1.s1/o1/B (OR2_130)       0.00      12.50 f
+  adder/subXY/genblk1[21].genblk1.s1/o1/U1/Y (or2_1x)     0.06      12.57 f
+  adder/subXY/genblk1[21].genblk1.s1/o1/Y (OR2_130)       0.00      12.57 f
+  adder/subXY/genblk1[21].genblk1.s1/a3/A (AND2_332)      0.00      12.57 f
+  adder/subXY/genblk1[21].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      12.64 f
+  adder/subXY/genblk1[21].genblk1.s1/a3/Y (AND2_332)      0.00      12.64 f
+  adder/subXY/genblk1[21].genblk1.s1/o2/A (OR2_129)       0.00      12.64 f
+  adder/subXY/genblk1[21].genblk1.s1/o2/U1/Y (or2_1x)     0.08      12.72 f
+  adder/subXY/genblk1[21].genblk1.s1/o2/Y (OR2_129)       0.00      12.72 f
+  adder/subXY/genblk1[21].genblk1.s1/bOut (subBit_20)     0.00      12.72 f
+  adder/subXY/genblk1[22].genblk1.s1/bIn (subBit_19)      0.00      12.72 f
+  adder/subXY/genblk1[22].genblk1.s1/o1/B (OR2_127)       0.00      12.72 f
+  adder/subXY/genblk1[22].genblk1.s1/o1/U1/Y (or2_1x)     0.06      12.78 f
+  adder/subXY/genblk1[22].genblk1.s1/o1/Y (OR2_127)       0.00      12.78 f
+  adder/subXY/genblk1[22].genblk1.s1/a3/A (AND2_329)      0.00      12.78 f
+  adder/subXY/genblk1[22].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      12.85 f
+  adder/subXY/genblk1[22].genblk1.s1/a3/Y (AND2_329)      0.00      12.85 f
+  adder/subXY/genblk1[22].genblk1.s1/o2/A (OR2_126)       0.00      12.85 f
+  adder/subXY/genblk1[22].genblk1.s1/o2/U1/Y (or2_1x)     0.08      12.94 f
+  adder/subXY/genblk1[22].genblk1.s1/o2/Y (OR2_126)       0.00      12.94 f
+  adder/subXY/genblk1[22].genblk1.s1/bOut (subBit_19)     0.00      12.94 f
+  adder/subXY/genblk1[23].genblk1.s1/bIn (subBit_18)      0.00      12.94 f
+  adder/subXY/genblk1[23].genblk1.s1/o1/B (OR2_124)       0.00      12.94 f
+  adder/subXY/genblk1[23].genblk1.s1/o1/U1/Y (or2_1x)     0.06      13.00 f
+  adder/subXY/genblk1[23].genblk1.s1/o1/Y (OR2_124)       0.00      13.00 f
+  adder/subXY/genblk1[23].genblk1.s1/a3/A (AND2_326)      0.00      13.00 f
+  adder/subXY/genblk1[23].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      13.07 f
+  adder/subXY/genblk1[23].genblk1.s1/a3/Y (AND2_326)      0.00      13.07 f
+  adder/subXY/genblk1[23].genblk1.s1/o2/A (OR2_123)       0.00      13.07 f
+  adder/subXY/genblk1[23].genblk1.s1/o2/U1/Y (or2_1x)     0.08      13.15 f
+  adder/subXY/genblk1[23].genblk1.s1/o2/Y (OR2_123)       0.00      13.15 f
+  adder/subXY/genblk1[23].genblk1.s1/bOut (subBit_18)     0.00      13.15 f
+  adder/subXY/genblk1[24].genblk1.s1/bIn (subBit_17)      0.00      13.15 f
+  adder/subXY/genblk1[24].genblk1.s1/o1/B (OR2_121)       0.00      13.15 f
+  adder/subXY/genblk1[24].genblk1.s1/o1/U1/Y (or2_1x)     0.06      13.22 f
+  adder/subXY/genblk1[24].genblk1.s1/o1/Y (OR2_121)       0.00      13.22 f
+  adder/subXY/genblk1[24].genblk1.s1/a3/A (AND2_323)      0.00      13.22 f
+  adder/subXY/genblk1[24].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      13.29 f
+  adder/subXY/genblk1[24].genblk1.s1/a3/Y (AND2_323)      0.00      13.29 f
+  adder/subXY/genblk1[24].genblk1.s1/o2/A (OR2_120)       0.00      13.29 f
+  adder/subXY/genblk1[24].genblk1.s1/o2/U1/Y (or2_1x)     0.08      13.37 f
+  adder/subXY/genblk1[24].genblk1.s1/o2/Y (OR2_120)       0.00      13.37 f
+  adder/subXY/genblk1[24].genblk1.s1/bOut (subBit_17)     0.00      13.37 f
+  adder/subXY/genblk1[25].genblk1.s1/bIn (subBit_16)      0.00      13.37 f
+  adder/subXY/genblk1[25].genblk1.s1/o1/B (OR2_118)       0.00      13.37 f
+  adder/subXY/genblk1[25].genblk1.s1/o1/U1/Y (or2_1x)     0.06      13.44 f
+  adder/subXY/genblk1[25].genblk1.s1/o1/Y (OR2_118)       0.00      13.44 f
+  adder/subXY/genblk1[25].genblk1.s1/a3/A (AND2_320)      0.00      13.44 f
+  adder/subXY/genblk1[25].genblk1.s1/a3/U1/Y (and2_1x)
+                                                          0.07      13.51 f
+  adder/subXY/genblk1[25].genblk1.s1/a3/Y (AND2_320)      0.00      13.51 f
+  adder/subXY/genblk1[25].genblk1.s1/o2/A (OR2_117)       0.00      13.51 f
+  adder/subXY/genblk1[25].genblk1.s1/o2/U1/Y (or2_1x)     0.08      13.59 f
+  adder/subXY/genblk1[25].genblk1.s1/o2/Y (OR2_117)       0.00      13.59 f
+  adder/subXY/genblk1[25].genblk1.s1/bOut (subBit_16)     0.00      13.59 f
+  adder/subXY/genblk1[26].genblk1.s1/bIn (subBit_15)      0.00      13.59 f
+  adder/subXY/genblk1[26].genblk1.s1/x0/B (XOR2_165)      0.00      13.59 f
+  adder/subXY/genblk1[26].genblk1.s1/x0/U1/OUT (xorp2_1x)
+                                                          0.12      13.71 f
+  adder/subXY/genblk1[26].genblk1.s1/x0/Y (XOR2_165)      0.00      13.71 f
+  adder/subXY/genblk1[26].genblk1.s1/i1/A (INV_117)       0.00      13.71 f
+  adder/subXY/genblk1[26].genblk1.s1/i1/U1/Y (inv_1x)     0.03      13.74 r
+  adder/subXY/genblk1[26].genblk1.s1/i1/Y (INV_117)       0.00      13.74 r
+  adder/subXY/genblk1[26].genblk1.s1/a0/B (AND2_319)      0.00      13.74 r
+  adder/subXY/genblk1[26].genblk1.s1/a0/U1/Y (and2_1x)
+                                                          0.05      13.79 r
+  adder/subXY/genblk1[26].genblk1.s1/a0/Y (AND2_319)      0.00      13.79 r
+  adder/subXY/genblk1[26].genblk1.s1/o0/A (OR2_116)       0.00      13.79 r
+  adder/subXY/genblk1[26].genblk1.s1/o0/U1/Y (or2_1x)     0.05      13.85 r
+  adder/subXY/genblk1[26].genblk1.s1/o0/Y (OR2_116)       0.00      13.85 r
+  adder/subXY/genblk1[26].genblk1.s1/D (subBit_15)        0.00      13.85 r
+  adder/subXY/D[26] (sub27)                               0.00      13.85 r
+  adder/m0/A[26] (mux27_14)                               0.00      13.85 r
+  adder/m0/genblk1[26].m0/A (MUX2_722)                    0.00      13.85 r
+  adder/m0/genblk1[26].m0/U3/Y (aoi22_1x)                 0.04      13.89 f
+  adder/m0/genblk1[26].m0/U2/Y (inv_1x)                   0.09      13.98 r
+  adder/m0/genblk1[26].m0/Y (MUX2_722)                    0.00      13.98 r
+  adder/m0/Y[26] (mux27_14)                               0.00      13.98 r
+  adder/sum[26] (addSub)                                  0.00      13.98 r
+  aNorm/sum[26] (nomalizeSum)                             0.00      13.98 r
+  aNorm/lead/Num[26] (LeadingZeros_27)                    0.00      13.98 r
+  aNorm/lead/U64/Y (inv_1x)                               0.04      14.02 f
+  aNorm/lead/U78/Y (nand3_1x)                             0.11      14.13 r
+  aNorm/lead/U29/Y (inv_1x)                               0.06      14.18 f
+  aNorm/lead/U75/Y (nand3_1x)                             0.15      14.33 r
+  aNorm/lead/U71/Y (nor4_1x)                              0.10      14.43 f
+  aNorm/lead/U19/Y (inv_1x)                               0.05      14.47 r
+  aNorm/lead/U70/Y (nor2_1x)                              0.04      14.51 f
+  aNorm/lead/U18/Y (inv_1x)                               0.07      14.58 r
+  aNorm/lead/U4/Y (or3_1x)                                0.21      14.79 r
+  aNorm/lead/U63/Y (nor3_1x)                              0.09      14.88 f
+  aNorm/lead/U11/Y (inv_1x)                               0.08      14.95 r
+  aNorm/lead/U62/Y (nor4_1x)                              0.09      15.04 f
+  aNorm/lead/U56/Y (nor3_1x)                              0.05      15.10 r
+  aNorm/lead/U55/Y (nand4_1x)                             0.06      15.16 f
+  aNorm/lead/U54/Y (aoi21_1x)                             0.05      15.21 r
+  aNorm/lead/U48/Y (nand4_1x)                             0.05      15.26 f
+  aNorm/lead/Zeros[0] (LeadingZeros_27)                   0.00      15.26 f
+  aNorm/U5/Y (buf_4x)                                     0.11      15.37 f
+  aNorm/shiftL/shiftAmount[0] (shift27Left)               0.00      15.37 f
+  aNorm/shiftL/m0/sel (mux27_4)                           0.00      15.37 f
+  aNorm/shiftL/m0/U3/Y (buf_4x)                           0.15      15.52 f
+  aNorm/shiftL/m0/U2/Y (inv_4x)                           0.04      15.56 r
+  aNorm/shiftL/m0/U1/Y (inv_4x)                           0.08      15.64 f
+  aNorm/shiftL/m0/genblk1[1].m0/sel (MUX2_133)            0.00      15.64 f
+  aNorm/shiftL/m0/genblk1[1].m0/U3/Y (aoi22_1x)           0.06      15.71 r
+  aNorm/shiftL/m0/genblk1[1].m0/U2/Y (inv_1x)             0.03      15.74 f
+  aNorm/shiftL/m0/genblk1[1].m0/Y (MUX2_133)              0.00      15.74 f
+  aNorm/shiftL/m0/Y[1] (mux27_4)                          0.00      15.74 f
+  aNorm/shiftL/m1/B[3] (mux27_3)                          0.00      15.74 f
+  aNorm/shiftL/m1/genblk1[3].m0/B (MUX2_104)              0.00      15.74 f
+  aNorm/shiftL/m1/genblk1[3].m0/U3/Y (aoi22_1x)           0.04      15.78 r
+  aNorm/shiftL/m1/genblk1[3].m0/U2/Y (inv_1x)             0.03      15.81 f
+  aNorm/shiftL/m1/genblk1[3].m0/Y (MUX2_104)              0.00      15.81 f
+  aNorm/shiftL/m1/Y[3] (mux27_3)                          0.00      15.81 f
+  aNorm/shiftL/m2/A[3] (mux27_2)                          0.00      15.81 f
+  aNorm/shiftL/m2/genblk1[3].m0/A (MUX2_77)               0.00      15.81 f
+  aNorm/shiftL/m2/genblk1[3].m0/U3/Y (aoi22_1x)           0.05      15.87 r
+  aNorm/shiftL/m2/genblk1[3].m0/U2/Y (inv_1x)             0.03      15.90 f
+  aNorm/shiftL/m2/genblk1[3].m0/Y (MUX2_77)               0.00      15.90 f
+  aNorm/shiftL/m2/Y[3] (mux27_2)                          0.00      15.90 f
+  aNorm/shiftL/m3/A[3] (mux27_1)                          0.00      15.90 f
+  aNorm/shiftL/m3/genblk1[3].m0/A (MUX2_50)               0.00      15.90 f
+  aNorm/shiftL/m3/genblk1[3].m0/U3/Y (aoi22_1x)           0.05      15.95 r
+  aNorm/shiftL/m3/genblk1[3].m0/U2/Y (inv_1x)             0.03      15.98 f
+  aNorm/shiftL/m3/genblk1[3].m0/Y (MUX2_50)               0.00      15.98 f
+  aNorm/shiftL/m3/Y[3] (mux27_1)                          0.00      15.98 f
+  aNorm/shiftL/m4/A[3] (mux27_0)                          0.00      15.98 f
+  aNorm/shiftL/m4/genblk1[3].m0/A (MUX2_23)               0.00      15.98 f
+  aNorm/shiftL/m4/genblk1[3].m0/U3/Y (aoi22_1x)           0.05      16.04 r
+  aNorm/shiftL/m4/genblk1[3].m0/U2/Y (inv_1x)             0.02      16.05 f
+  aNorm/shiftL/m4/genblk1[3].m0/Y (MUX2_23)               0.00      16.05 f
+  aNorm/shiftL/m4/Y[3] (mux27_0)                          0.00      16.05 f
+  aNorm/shiftL/B[3] (shift27Left)                         0.00      16.05 f
+  aNorm/m5/B[3] (mux27_12)                                0.00      16.05 f
+  aNorm/m5/genblk1[3].m0/B (MUX2_675)                     0.00      16.05 f
+  aNorm/m5/genblk1[3].m0/U3/Y (aoi22_1x)                  0.04      16.10 r
+  aNorm/m5/genblk1[3].m0/U2/Y (inv_1x)                    0.02      16.12 f
+  aNorm/m5/genblk1[3].m0/Y (MUX2_675)                     0.00      16.12 f
+  aNorm/m5/Y[3] (mux27_12)                                0.00      16.12 f
+  aNorm/m4/A[3] (mux27_13)                                0.00      16.12 f
+  aNorm/m4/genblk1[3].m0/A (MUX2_702)                     0.00      16.12 f
+  aNorm/m4/genblk1[3].m0/U3/Y (aoi22_1x)                  0.05      16.17 r
+  aNorm/m4/genblk1[3].m0/U2/Y (inv_1x)                    0.06      16.23 f
+  aNorm/m4/genblk1[3].m0/Y (MUX2_702)                     0.00      16.23 f
+  aNorm/m4/Y[3] (mux27_13)                                0.00      16.23 f
+  aNorm/sumNorm[3] (nomalizeSum)                          0.00      16.23 f
+  aRound/sumNorm[3] (realRounding_1)                      0.00      16.23 f
+  aRound/add0/A[0] (addOne24_1)                           0.00      16.23 f
+  aRound/add0/genblk1[0].genblk1.h0/A (halfAdder_138)     0.00      16.23 f
+  aRound/add0/genblk1[0].genblk1.h0/a0/A (AND2_245)       0.00      16.23 f
+  aRound/add0/genblk1[0].genblk1.h0/a0/U1/Y (and2_1x)     0.09      16.32 f
+  aRound/add0/genblk1[0].genblk1.h0/a0/Y (AND2_245)       0.00      16.32 f
+  aRound/add0/genblk1[0].genblk1.h0/cOut (halfAdder_138)
+                                                          0.00      16.32 f
+  aRound/add0/genblk1[1].genblk1.h1/B (halfAdder_137)     0.00      16.32 f
+  aRound/add0/genblk1[1].genblk1.h1/a0/B (AND2_244)       0.00      16.32 f
+  aRound/add0/genblk1[1].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.38 f
+  aRound/add0/genblk1[1].genblk1.h1/a0/Y (AND2_244)       0.00      16.38 f
+  aRound/add0/genblk1[1].genblk1.h1/cOut (halfAdder_137)
+                                                          0.00      16.38 f
+  aRound/add0/genblk1[2].genblk1.h1/B (halfAdder_136)     0.00      16.38 f
+  aRound/add0/genblk1[2].genblk1.h1/a0/B (AND2_243)       0.00      16.38 f
+  aRound/add0/genblk1[2].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.45 f
+  aRound/add0/genblk1[2].genblk1.h1/a0/Y (AND2_243)       0.00      16.45 f
+  aRound/add0/genblk1[2].genblk1.h1/cOut (halfAdder_136)
+                                                          0.00      16.45 f
+  aRound/add0/genblk1[3].genblk1.h1/B (halfAdder_135)     0.00      16.45 f
+  aRound/add0/genblk1[3].genblk1.h1/a0/B (AND2_242)       0.00      16.45 f
+  aRound/add0/genblk1[3].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.52 f
+  aRound/add0/genblk1[3].genblk1.h1/a0/Y (AND2_242)       0.00      16.52 f
+  aRound/add0/genblk1[3].genblk1.h1/cOut (halfAdder_135)
+                                                          0.00      16.52 f
+  aRound/add0/genblk1[4].genblk1.h1/B (halfAdder_134)     0.00      16.52 f
+  aRound/add0/genblk1[4].genblk1.h1/a0/B (AND2_241)       0.00      16.52 f
+  aRound/add0/genblk1[4].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.58 f
+  aRound/add0/genblk1[4].genblk1.h1/a0/Y (AND2_241)       0.00      16.58 f
+  aRound/add0/genblk1[4].genblk1.h1/cOut (halfAdder_134)
+                                                          0.00      16.58 f
+  aRound/add0/genblk1[5].genblk1.h1/B (halfAdder_133)     0.00      16.58 f
+  aRound/add0/genblk1[5].genblk1.h1/a0/B (AND2_240)       0.00      16.58 f
+  aRound/add0/genblk1[5].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.65 f
+  aRound/add0/genblk1[5].genblk1.h1/a0/Y (AND2_240)       0.00      16.65 f
+  aRound/add0/genblk1[5].genblk1.h1/cOut (halfAdder_133)
+                                                          0.00      16.65 f
+  aRound/add0/genblk1[6].genblk1.h1/B (halfAdder_132)     0.00      16.65 f
+  aRound/add0/genblk1[6].genblk1.h1/a0/B (AND2_239)       0.00      16.65 f
+  aRound/add0/genblk1[6].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.72 f
+  aRound/add0/genblk1[6].genblk1.h1/a0/Y (AND2_239)       0.00      16.72 f
+  aRound/add0/genblk1[6].genblk1.h1/cOut (halfAdder_132)
+                                                          0.00      16.72 f
+  aRound/add0/genblk1[7].genblk1.h1/B (halfAdder_131)     0.00      16.72 f
+  aRound/add0/genblk1[7].genblk1.h1/a0/B (AND2_238)       0.00      16.72 f
+  aRound/add0/genblk1[7].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.78 f
+  aRound/add0/genblk1[7].genblk1.h1/a0/Y (AND2_238)       0.00      16.78 f
+  aRound/add0/genblk1[7].genblk1.h1/cOut (halfAdder_131)
+                                                          0.00      16.78 f
+  aRound/add0/genblk1[8].genblk1.h1/B (halfAdder_130)     0.00      16.78 f
+  aRound/add0/genblk1[8].genblk1.h1/a0/B (AND2_237)       0.00      16.78 f
+  aRound/add0/genblk1[8].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.85 f
+  aRound/add0/genblk1[8].genblk1.h1/a0/Y (AND2_237)       0.00      16.85 f
+  aRound/add0/genblk1[8].genblk1.h1/cOut (halfAdder_130)
+                                                          0.00      16.85 f
+  aRound/add0/genblk1[9].genblk1.h1/B (halfAdder_129)     0.00      16.85 f
+  aRound/add0/genblk1[9].genblk1.h1/a0/B (AND2_236)       0.00      16.85 f
+  aRound/add0/genblk1[9].genblk1.h1/a0/U1/Y (and2_1x)     0.07      16.92 f
+  aRound/add0/genblk1[9].genblk1.h1/a0/Y (AND2_236)       0.00      16.92 f
+  aRound/add0/genblk1[9].genblk1.h1/cOut (halfAdder_129)
+                                                          0.00      16.92 f
+  aRound/add0/genblk1[10].genblk1.h1/B (halfAdder_128)
+                                                          0.00      16.92 f
+  aRound/add0/genblk1[10].genblk1.h1/a0/B (AND2_235)      0.00      16.92 f
+  aRound/add0/genblk1[10].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      16.99 f
+  aRound/add0/genblk1[10].genblk1.h1/a0/Y (AND2_235)      0.00      16.99 f
+  aRound/add0/genblk1[10].genblk1.h1/cOut (halfAdder_128)
+                                                          0.00      16.99 f
+  aRound/add0/genblk1[11].genblk1.h1/B (halfAdder_127)
+                                                          0.00      16.99 f
+  aRound/add0/genblk1[11].genblk1.h1/a0/B (AND2_234)      0.00      16.99 f
+  aRound/add0/genblk1[11].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.05 f
+  aRound/add0/genblk1[11].genblk1.h1/a0/Y (AND2_234)      0.00      17.05 f
+  aRound/add0/genblk1[11].genblk1.h1/cOut (halfAdder_127)
+                                                          0.00      17.05 f
+  aRound/add0/genblk1[12].genblk1.h1/B (halfAdder_126)
+                                                          0.00      17.05 f
+  aRound/add0/genblk1[12].genblk1.h1/a0/B (AND2_233)      0.00      17.05 f
+  aRound/add0/genblk1[12].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.12 f
+  aRound/add0/genblk1[12].genblk1.h1/a0/Y (AND2_233)      0.00      17.12 f
+  aRound/add0/genblk1[12].genblk1.h1/cOut (halfAdder_126)
+                                                          0.00      17.12 f
+  aRound/add0/genblk1[13].genblk1.h1/B (halfAdder_125)
+                                                          0.00      17.12 f
+  aRound/add0/genblk1[13].genblk1.h1/a0/B (AND2_232)      0.00      17.12 f
+  aRound/add0/genblk1[13].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.19 f
+  aRound/add0/genblk1[13].genblk1.h1/a0/Y (AND2_232)      0.00      17.19 f
+  aRound/add0/genblk1[13].genblk1.h1/cOut (halfAdder_125)
+                                                          0.00      17.19 f
+  aRound/add0/genblk1[14].genblk1.h1/B (halfAdder_124)
+                                                          0.00      17.19 f
+  aRound/add0/genblk1[14].genblk1.h1/a0/B (AND2_231)      0.00      17.19 f
+  aRound/add0/genblk1[14].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.25 f
+  aRound/add0/genblk1[14].genblk1.h1/a0/Y (AND2_231)      0.00      17.25 f
+  aRound/add0/genblk1[14].genblk1.h1/cOut (halfAdder_124)
+                                                          0.00      17.25 f
+  aRound/add0/genblk1[15].genblk1.h1/B (halfAdder_123)
+                                                          0.00      17.25 f
+  aRound/add0/genblk1[15].genblk1.h1/a0/B (AND2_230)      0.00      17.25 f
+  aRound/add0/genblk1[15].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.32 f
+  aRound/add0/genblk1[15].genblk1.h1/a0/Y (AND2_230)      0.00      17.32 f
+  aRound/add0/genblk1[15].genblk1.h1/cOut (halfAdder_123)
+                                                          0.00      17.32 f
+  aRound/add0/genblk1[16].genblk1.h1/B (halfAdder_122)
+                                                          0.00      17.32 f
+  aRound/add0/genblk1[16].genblk1.h1/a0/B (AND2_229)      0.00      17.32 f
+  aRound/add0/genblk1[16].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.39 f
+  aRound/add0/genblk1[16].genblk1.h1/a0/Y (AND2_229)      0.00      17.39 f
+  aRound/add0/genblk1[16].genblk1.h1/cOut (halfAdder_122)
+                                                          0.00      17.39 f
+  aRound/add0/genblk1[17].genblk1.h1/B (halfAdder_121)
+                                                          0.00      17.39 f
+  aRound/add0/genblk1[17].genblk1.h1/a0/B (AND2_228)      0.00      17.39 f
+  aRound/add0/genblk1[17].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.45 f
+  aRound/add0/genblk1[17].genblk1.h1/a0/Y (AND2_228)      0.00      17.45 f
+  aRound/add0/genblk1[17].genblk1.h1/cOut (halfAdder_121)
+                                                          0.00      17.45 f
+  aRound/add0/genblk1[18].genblk1.h1/B (halfAdder_120)
+                                                          0.00      17.45 f
+  aRound/add0/genblk1[18].genblk1.h1/a0/B (AND2_227)      0.00      17.45 f
+  aRound/add0/genblk1[18].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.52 f
+  aRound/add0/genblk1[18].genblk1.h1/a0/Y (AND2_227)      0.00      17.52 f
+  aRound/add0/genblk1[18].genblk1.h1/cOut (halfAdder_120)
+                                                          0.00      17.52 f
+  aRound/add0/genblk1[19].genblk1.h1/B (halfAdder_119)
+                                                          0.00      17.52 f
+  aRound/add0/genblk1[19].genblk1.h1/a0/B (AND2_226)      0.00      17.52 f
+  aRound/add0/genblk1[19].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.59 f
+  aRound/add0/genblk1[19].genblk1.h1/a0/Y (AND2_226)      0.00      17.59 f
+  aRound/add0/genblk1[19].genblk1.h1/cOut (halfAdder_119)
+                                                          0.00      17.59 f
+  aRound/add0/genblk1[20].genblk1.h1/B (halfAdder_118)
+                                                          0.00      17.59 f
+  aRound/add0/genblk1[20].genblk1.h1/a0/B (AND2_225)      0.00      17.59 f
+  aRound/add0/genblk1[20].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.66 f
+  aRound/add0/genblk1[20].genblk1.h1/a0/Y (AND2_225)      0.00      17.66 f
+  aRound/add0/genblk1[20].genblk1.h1/cOut (halfAdder_118)
+                                                          0.00      17.66 f
+  aRound/add0/genblk1[21].genblk1.h1/B (halfAdder_117)
+                                                          0.00      17.66 f
+  aRound/add0/genblk1[21].genblk1.h1/a0/B (AND2_224)      0.00      17.66 f
+  aRound/add0/genblk1[21].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.72 f
+  aRound/add0/genblk1[21].genblk1.h1/a0/Y (AND2_224)      0.00      17.72 f
+  aRound/add0/genblk1[21].genblk1.h1/cOut (halfAdder_117)
+                                                          0.00      17.72 f
+  aRound/add0/genblk1[22].genblk1.h1/B (halfAdder_116)
+                                                          0.00      17.72 f
+  aRound/add0/genblk1[22].genblk1.h1/a0/B (AND2_223)      0.00      17.72 f
+  aRound/add0/genblk1[22].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.07      17.79 f
+  aRound/add0/genblk1[22].genblk1.h1/a0/Y (AND2_223)      0.00      17.79 f
+  aRound/add0/genblk1[22].genblk1.h1/cOut (halfAdder_116)
+                                                          0.00      17.79 f
+  aRound/add0/genblk1[23].genblk1.h1/B (halfAdder_115)
+                                                          0.00      17.79 f
+  aRound/add0/genblk1[23].genblk1.h1/a0/B (AND2_222)      0.00      17.79 f
+  aRound/add0/genblk1[23].genblk1.h1/a0/U1/Y (and2_1x)
+                                                          0.10      17.89 f
+  aRound/add0/genblk1[23].genblk1.h1/a0/Y (AND2_222)      0.00      17.89 f
+  aRound/add0/genblk1[23].genblk1.h1/cOut (halfAdder_115)
+                                                          0.00      17.89 f
+  aRound/add0/cOut (addOne24_1)                           0.00      17.89 f
+  aRound/a4/A (AND2_501)                                  0.00      17.89 f
+  aRound/a4/U1/Y (and2_1x)                                0.08      17.97 f
+  aRound/a4/Y (AND2_501)                                  0.00      17.97 f
+  aRound/mR/A (MUX2_900)                                  0.00      17.97 f
+  aRound/mR/U3/Y (aoi22_1x)                               0.05      18.02 r
+  aRound/mR/U2/Y (inv_1x)                                 0.02      18.05 f
+  aRound/mR/Y (MUX2_900)                                  0.00      18.05 f
+  aRound/roundOverflow (realRounding_1)                   0.00      18.05 f
+  aAdj/roundOverflow (addAdjust)                          0.00      18.05 f
+  aAdj/o1/A (OR2_287)                                     0.00      18.05 f
+  aAdj/o1/U1/Y (or2_1x)                                   0.07      18.12 f
+  aAdj/o1/Y (OR2_287)                                     0.00      18.12 f
+  aAdj/o2/A (OR3_2)                                       0.00      18.12 f
+  aAdj/o2/U1/Y (or3_1x)                                   0.11      18.23 f
+  aAdj/o2/Y (OR3_2)                                       0.00      18.23 f
+  aAdj/m1/sel (mux32_4)                                   0.00      18.23 f
+  aAdj/m1/U7/Y (buf_4x)                                   0.10      18.33 f
+  aAdj/m1/U1/Y (buf_4x)                                   0.13      18.46 f
+  aAdj/m1/genblk1[23].m0/sel (MUX2_532)                   0.00      18.46 f
+  aAdj/m1/genblk1[23].m0/U3/Y (aoi22_1x)                  0.06      18.52 r
+  aAdj/m1/genblk1[23].m0/U2/Y (inv_1x)                    0.02      18.54 f
+  aAdj/m1/genblk1[23].m0/Y (MUX2_532)                     0.00      18.54 f
+  aAdj/m1/Y[23] (mux32_4)                                 0.00      18.54 f
+  aAdj/m0/A[23] (mux32_5)                                 0.00      18.54 f
+  aAdj/m0/genblk1[23].m0/A (MUX2_564)                     0.00      18.54 f
+  aAdj/m0/genblk1[23].m0/U3/Y (aoi22_1x)                  0.05      18.60 r
+  aAdj/m0/genblk1[23].m0/U2/Y (inv_1x)                    0.02      18.62 f
+  aAdj/m0/genblk1[23].m0/Y (MUX2_564)                     0.00      18.62 f
+  aAdj/m0/Y[23] (mux32_5)                                 0.00      18.62 f
+  aAdj/floatFinal[23] (addAdjust)                         0.00      18.62 f
+  m0/A[23] (mux32_6)                                      0.00      18.62 f
+  m0/genblk1[23].m0/A (MUX2_875)                          0.00      18.62 f
+  m0/genblk1[23].m0/U3/Y (aoi22_1x)                       0.05      18.67 r
+  m0/genblk1[23].m0/U2/Y (inv_1x)                         0.04      18.71 f
+  m0/genblk1[23].m0/Y (MUX2_875)                          0.00      18.71 f
+  m0/Y[23] (mux32_6)                                      0.00      18.71 f
+  Y_reg_reg[23]/d (dff_1x)                                0.00      18.71 f
+  data arrival time                                                 18.71
+
+  clock clk (rise edge)                                 100.00     100.00
+  clock network delay (ideal)                             0.00     100.00
+  Y_reg_reg[23]/clk (dff_1x)                              0.00     100.00 r
+  library setup time                                     -0.22      99.78
+  data required time                                                99.78
+  --------------------------------------------------------------------------
+  data required time                                                99.78
+  data arrival time                                                -18.71
+  --------------------------------------------------------------------------
+  slack (MET)                                                       81.07
+
+
+1
+

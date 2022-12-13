@@ -1,0 +1,3 @@
+Metric, Yours, Required (640), Extra Credit (640)
+Area, 22095.5, 40000, 25000
+Timing, 18.71, 25, 20

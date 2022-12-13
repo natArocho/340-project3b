@@ -1,0 +1,97 @@
+Test FPU
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Wed Nov 23 05:16:19 2022
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '/tmp/ece340_verilog_test_tb_fpuf4dhlb38/student_files/fpu.sv'
+Parsing design file '/tmp/ece340_verilog_test_tb_fpuf4dhlb38/student_files/studentlib.sv'
+Parsing design file '/tmp/ece340_verilog_test_tb_fpuf4dhlb38/gold_files/tb_fpu.sv'
+Parsing design file '/tmp/ece340_verilog_test_tb_fpuf4dhlb38/gold_files/gold_fpu.sv'
+Parsing design file '/tmp/ece340_verilog_test_tb_fpuf4dhlb38/gold_files/fpu_lib.sv'
+Parsing design file '/tmp/ece340_verilog_test_tb_fpuf4dhlb38/gold_files/fpu_tasks.sv'
+Parsing design file '/tmp/ece340_verilog_test_tb_fpuf4dhlb38/gold_files/gatelib.v'
+Top Level Modules:
+       tb_fpu
+No TimeScale specified
+
+Warning-[DRTZ] Detect delay value roundoff to 0
+  Delay from design or SDF file roundoff to 0 based on timescale
+  Please use switch -diag timescale to dump detailed information.
+
+Starting vcs inline pass...
+
+17 modules and 0 UDP read.
+recompiling module fullAdder
+recompiling module addOne8
+recompiling module subBit
+recompiling module sub8
+recompiling module equalZero8
+recompiling module equalFF8
+recompiling module equalZero23
+recompiling module mux8
+recompiling module mux24
+recompiling module mux27
+recompiling module mux32
+recompiling module compare
+recompiling module compare9
+recompiling module realRounding
+recompiling module tb_fpu
+recompiling module getSticky_27
+recompiling module MUX2
+All of 17 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/ux0/synopsys/vcs/T-2022.06/linux64/lib -L/ux0/synopsys/vcs/T-2022.06/linux64/lib  -Wl,-rpath-link=./   objs/amcQw_d.o   _80911_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /ux0/synopsys/vcs/T-2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /ux0/synopsys/vcs/T-2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 23 05:16 2022
+$finish called from file "/tmp/ece340_verilog_test_tb_fpuf4dhlb38/gold_files/tb_fpu.sv", line 234.
+$finish at simulation time            274487550
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 274487550
+CPU Time:     15.820 seconds;       Data structure size:   0.2Mb
+Wed Nov 23 05:16:37 2022
+CPU time: 1.098 seconds to compile + .666 seconds to elab + .238 seconds to link + 15.858 seconds in simulation
+
+
+Test NN
+
+Warning-[IPDW] Identifier previously declared
+student_files/iris_nn.sv, 112
+  Second declaration for identifier 't1' ignored
+  Identifier 't1' previously declared as logic. [student_files/iris_nn.sv, 99]
+
+
+Warning-[PCWM-W] Port connection width mismatch
+student_files/iris_nn.sv, 122
+"sigmoid n2S(n2In, t2, 3'b0, neuron2_output);"
+  The following 1-bit expression is connected to 8-bit port "status_inst" of 
+  module "sigmoid", instance "n2S".
+  Expression: t2
+  Instantiated module defined at: "gold_files/sigmoid.v", 9
+  Use +lint=PCWM for more details.
+
+Notice: Ports coerced to inout, use -notice for details
+
+58 modules and 1 UDP read.
+../simv up to date
+$finish called from file "gold_files/tb_nn.sv", line 701.
+$finish at simulation time            126000000
+
+

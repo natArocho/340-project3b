@@ -1,0 +1,9 @@
+Test FPU
+(     arg1        ) (     arg2        ) | op| ==> (    student    ) : (     gold        )
+Number of errors:           0
+Out of total vectors:       88012
+
+
+Test NN
+
+

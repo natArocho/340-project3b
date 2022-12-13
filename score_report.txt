@@ -1,0 +1,3 @@
+Test FPU: 30.0 / 30
+Test NN: 30.0 / 30
+total: 60.0 / 60
